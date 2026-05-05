@@ -1434,20 +1434,38 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 }
 .hd-label-row { display: flex; align-items: center; justify-content: space-between; }
 .hd-live { display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 800; color: rgba(255,255,255,.5); text-transform: uppercase; letter-spacing: .1em; }
-.hd-live-dot { width: 7px; height: 7px; background: #4ade80; border-radius: 50%; animation: livePulse 2s ease-in-out infinite; }
+.hd-live-dot {
+  position: relative;
+  width: 7px; height: 7px; background: #4ade80; border-radius: 50%;
+  animation: livePulse 2.4s ease-in-out infinite;
+  flex-shrink: 0;
+}
+.hd-live-dot::after {
+  content: ''; position: absolute;
+  inset: -3px; border-radius: 50%;
+  border: 1.5px solid #4ade80;
+  animation: dotRing 2.4s ease-out infinite;
+}
+@keyframes dotRing {
+  0%   { transform: scale(1); opacity: .5; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
 .hd-period { font-size: 11px; color: rgba(255,255,255,.3); font-weight: 600; }
 .hd-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .hd-metric {
   background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07);
   border-radius: 14px; padding: 18px 16px;
-  display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 5px; text-align: center;
   transition: background .2s, transform .2s;
 }
 .hd-metric:hover { background: rgba(201,147,58,.1); transform: translateY(-2px); }
+.hd-metric-top { display: flex; align-items: baseline; justify-content: center; gap: 6px; }
 .hd-num { font-size: 26px; font-weight: 800; color: var(--white); font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.02em; }
+.hd-delta { font-size: 10px; font-weight: 700; letter-spacing: .01em; }
+.hd-delta.up { color: #4ade80; }
+.hd-delta.down { color: #f87171; }
 .hd-lbl { font-size: 11px; font-weight: 600; color: rgba(255,255,255,.45); }
-.hd-arrow { font-size: 14px; font-weight: 900; }
-.hd-arrow.up { color: #4ade80; }
+.hd-source { font-size: 9.5px; font-weight: 500; color: rgba(255,255,255,.22); letter-spacing: .02em; }
 
 /* ── JOURNEY STEP FEATURED (step 1) ── */
 .journey-step-featured .journey-icon-wrap {
