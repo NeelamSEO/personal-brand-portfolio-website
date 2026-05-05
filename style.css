@@ -152,7 +152,15 @@ h3 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; line-height: 1.2
   font-size: 13px; font-weight: 700;
   color: rgba(255,255,255,.55);
   letter-spacing: .04em; text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+}
+
+.hero-emotional-hook {
+  font-size: 15px; font-weight: 600; font-style: italic;
+  color: rgba(255,255,255,.6); line-height: 1.55;
+  max-width: 480px; margin-bottom: 18px;
+  border-left: 2px solid rgba(201,147,58,.5);
+  padding-left: 12px;
 }
 
 .hero h1 {
@@ -1457,6 +1465,16 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 .fl-6 { animation-duration: 6.9s; }
 
 /* ── HERO TRUST LINE ── */
+.hero-diff-line {
+  font-size: 13px; font-weight: 700; color: var(--gold-light);
+  margin-top: 10px; margin-bottom: 28px; letter-spacing: .01em;
+}
+
+.hero-micro-friction {
+  font-size: 12px; font-weight: 700; color: rgba(255,255,255,.45);
+  margin-top: 10px; letter-spacing: .02em;
+}
+
 .hero-trust-line {
   font-size: 12px; color: rgba(255,255,255,.38);
   margin-top: 12px; font-style: italic; letter-spacing: .02em;
