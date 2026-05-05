@@ -1465,6 +1465,11 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 .fl-6 { animation-duration: 6.9s; }
 
 /* ── HERO TRUST LINE ── */
+.hero-proof-line {
+  font-size: 13px; font-weight: 600; color: rgba(255,255,255,.5);
+  margin-bottom: 14px; letter-spacing: .01em;
+}
+
 .hero-diff-line {
   font-size: 13px; font-weight: 700; color: var(--gold-light);
   margin-top: 10px; margin-bottom: 28px; letter-spacing: .01em;
@@ -1727,6 +1732,8 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 .cs-ba-after .cs-ba-label { color: var(--gold); }
 .cs-ba-stat { font-size: 12px; font-weight: 600; color: var(--muted); line-height: 1.5; }
 .cs-ba-after .cs-ba-stat { color: var(--dark); font-weight: 700; }
+.cs-ba-summary { font-size: 10.5px; font-weight: 800; color: var(--muted); letter-spacing: .03em; margin-top: 4px; font-style: italic; }
+.cs-ba-after .cs-ba-summary { color: #065f46; }
 .cs-ba-arrow {
   font-size: 18px; color: var(--gold); flex-shrink: 0; font-weight: 900;
 }
@@ -1837,6 +1844,7 @@ textarea.form-input { resize: vertical; min-height: 130px; }
   gap: 10px;
 }
 .sticky-cta-primary { flex: 1; justify-content: center; }
+.sticky-urgency { font-size: 10px; font-weight: 800; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .1em; white-space: nowrap; }
 @media (max-width: 640px) {
   .sticky-cta-bar { display: flex; }
   /* Add padding to footer so sticky bar doesn't overlap it */
