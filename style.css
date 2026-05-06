@@ -410,8 +410,11 @@ h3 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; line-height: 1.2
 /* Tab list — left column */
 .svc-tab-list {
   display: flex; flex-direction: column; gap: 3px;
-  position: sticky; top: 90px;
-  background: var(--white); border: 1px solid var(--border);
+  position: sticky; top: 90px; z-index: 80;
+  background: rgba(247,244,239,0.9);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
   border-radius: 20px; padding: 10px;
 }
 .svc-tab {
@@ -425,6 +428,7 @@ h3 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; line-height: 1.2
 .svc-tab:hover { background: rgba(201,147,58,.07); color: var(--dark); }
 .svc-tab.active {
   background: var(--dark); color: var(--white);
+  box-shadow: inset 3px 0 0 var(--gold);
 }
 .svc-tab-icon-sm {
   width: 18px; height: 18px; flex-shrink: 0; display: flex;
@@ -2726,10 +2730,15 @@ textarea.form-input { resize: vertical; min-height: 130px; }
     flex-wrap: nowrap;
     overflow-x: auto;
     scrollbar-width: none;
-    position: static;
+    position: sticky;
+    top: 68px;
+    z-index: 80;
     padding: 10px 4px;
     gap: 6px;
     border-radius: 16px;
+    background: rgba(247,244,239,0.92);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
   }
   .svc-tab-list::-webkit-scrollbar { display: none; }
   .svc-tab {

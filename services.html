@@ -824,6 +824,23 @@
   requestAnimationFrame(function () { current.classList.add('visible'); });
   animateIcon(current);
 
+  var tabList = document.querySelector('.svc-tab-list');
+  var panelsEl = document.querySelector('.svc-panels');
+
+  function scrollTabIntoView(tab) {
+    if (!tabList || tabList.scrollWidth <= tabList.clientWidth) return;
+    var tabCenter = tab.offsetLeft + tab.offsetWidth / 2;
+    tabList.scrollTo({ left: tabCenter - tabList.clientWidth / 2, behavior: 'smooth' });
+  }
+
+  function scrollPanelsIntoView() {
+    if (!panelsEl) return;
+    var r = panelsEl.getBoundingClientRect();
+    if (r.top < 0 || r.top > window.innerHeight * 0.6) {
+      panelsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
   function activateTab(tab) {
     var targetId = tab.dataset.target;
     var next = document.getElementById(targetId);
@@ -837,6 +854,10 @@
     }
     tab.classList.add('active');
     tab.setAttribute('aria-selected', 'true');
+
+    // Scroll mobile strip & panels into view
+    scrollTabIntoView(tab);
+    scrollPanelsIntoView();
 
     // Fade out
     current.classList.remove('visible');
