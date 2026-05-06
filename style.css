@@ -3821,36 +3821,66 @@ img { height: auto; max-width: 100%; }
   top: 1px;
 }
 
-/* Screenshot placeholder */
-.cs-screenshot-slot {
-  margin: 24px 0;
+/* Performance snapshot dashboard block */
+.cs-perf-snapshot {
+  margin: 20px 0;
+  background: #f5f3ef;
   border-radius: 10px;
-  overflow: hidden;
-  border: 1.5px dashed var(--border);
-  background: #f9f8f6;
+  padding: 16px 20px 14px;
+  border-left: 3px solid var(--gold);
 }
-.cs-screenshot-inner {
+.cs-perf-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.cs-perf-metrics {
+  display: flex;
+  gap: 0;
+}
+.cs-perf-metric {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 36px 24px;
-  text-align: center;
+  align-items: flex-start;
+  padding: 0 16px 0 0;
+  border-right: 1px solid rgba(0,0,0,.08);
+  margin-right: 16px;
 }
-.cs-screenshot-icon {
-  font-size: 1.6rem;
-  color: var(--gold);
-  line-height: 1;
+.cs-perf-metric:last-child {
+  border-right: none;
+  padding-right: 0;
+  margin-right: 0;
 }
-.cs-screenshot-text {
-  font-size: 0.88rem;
-  font-weight: 600;
+.cs-perf-val {
+  font-size: 1.15rem;
+  font-weight: 800;
   color: var(--dark);
+  line-height: 1;
+  letter-spacing: -.01em;
 }
-.cs-screenshot-note {
-  font-size: 0.74rem;
+.cs-perf-arrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+  margin: 3px 0 4px;
+}
+.cs-perf-up   { color: #16a34a; }
+.cs-perf-down { color: #16a34a; }
+.cs-perf-key {
+  font-size: 0.72rem;
+  font-weight: 500;
   color: var(--muted);
+  line-height: 1.3;
+}
+.cs-perf-note {
+  font-size: 0.68rem;
+  color: rgba(0,0,0,.32);
+  margin: 10px 0 0;
   font-style: italic;
 }
 
@@ -3900,4 +3930,10 @@ img { height: auto; max-width: 100%; }
   .cs-results-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .cs-cta-row { flex-direction: column; }
   .cs-cta-row .btn { width: 100%; text-align: center; }
+  .cs-perf-metrics { flex-direction: column; gap: 10px; }
+  .cs-perf-metric { border-right: none; border-bottom: 1px solid rgba(0,0,0,.08); padding: 0 0 10px; margin: 0 0 0; flex-direction: row; align-items: center; gap: 8px; }
+  .cs-perf-metric:last-child { border-bottom: none; padding-bottom: 0; }
+  .cs-perf-val { font-size: 1rem; }
+  .cs-perf-arrow { margin: 0; }
+  .cs-perf-key { margin-left: auto; text-align: right; }
 }
