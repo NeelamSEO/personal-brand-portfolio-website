@@ -3133,3 +3133,160 @@ img { height: auto; max-width: 100%; }
   .gbp-card-2,
   .gbp-card-3 { animation: none; }
 }
+
+/* ═══════════════════════════════════════════
+   TECHNICAL SEO PANEL
+═══════════════════════════════════════════ */
+#panel-technical-seo { padding: 0; }
+
+.tech-split {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  min-height: 460px;
+}
+
+/* ── Content left ── */
+.tech-content {
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tech-content h3 {
+  font-size: 1.35rem;
+  color: var(--dark);
+  line-height: 1.3;
+  margin: 4px 0 0;
+}
+
+.tech-rows { display: flex; flex-direction: column; gap: 4px; }
+
+.tech-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 12px;
+  align-items: baseline;
+  padding: 10px 10px 10px 0;
+  border-radius: 8px;
+  transition: background 0.2s ease, padding-left 0.2s ease;
+}
+
+.tech-row:hover {
+  background: rgba(74,222,128,.06);
+  padding-left: 14px;
+}
+
+.tech-row p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.tech-row-lbl {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.tech-lbl-problem { background: rgba(239,68,68,.1);   color: #dc2626; }
+.tech-lbl-fix     { background: rgba(74,222,128,.12); color: #16a34a; }
+.tech-lbl-outcome { background: rgba(99,102,241,.1);  color: #4f46e5; }
+
+/* ── Visual right: crawl map ── */
+.tech-visual {
+  position: relative;
+  background: linear-gradient(160deg, #0f172a 0%, #0d1f2d 100%);
+  overflow: hidden;
+  padding: 20px 12px;
+}
+
+/* Scanning line */
+.tech-scan {
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(74,222,128,0.6), transparent);
+  will-change: transform;
+  animation: techScan 3s linear infinite;
+}
+
+@keyframes techScan {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(260px); }
+}
+
+/* SVG connector overlay */
+.tech-lines {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+}
+
+/* Nodes */
+.tech-node {
+  position: absolute;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(74,222,128,0.9);
+  background: rgba(74,222,128,0.08);
+  border: 1px solid rgba(74,222,128,0.28);
+  border-radius: 6px;
+  padding: 4px 7px;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+/* Node positions */
+.tn-home     { top: 18px;  left: 50%; transform: translateX(-50%); background: rgba(74,222,128,0.15); border-color: rgba(74,222,128,0.5); }
+.tn-services { top: 80px;  left: 12px; }
+.tn-blog     { top: 80px;  left: 50%; transform: translateX(-50%); }
+.tn-contact  { top: 80px;  right: 12px; }
+.tn-p1       { top: 156px; left: 12px; animation: techBlink 4s ease-in-out infinite; }
+.tn-p2       { top: 156px; right: 12px; border-color: rgba(239,68,68,0.5); color: rgba(239,68,68,0.9); background: rgba(239,68,68,0.08); animation: techBlink 4s ease-in-out infinite 1s; }
+
+@keyframes techBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+/* Diagnostic labels */
+.tech-label {
+  position: absolute;
+  font-size: 0.6rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.tl-broken { bottom: 72px; right: 10px; background: rgba(239,68,68,.18); color: #f87171; }
+.tl-schema { bottom: 50px; left: 10px;  background: rgba(74,222,128,.15); color: #4ade80; }
+.tl-speed  { bottom: 28px; right: 10px; background: rgba(251,191,36,.15); color: #fbbf24; }
+.tl-index  { bottom: 28px; left: 10px;  background: rgba(99,102,241,.15); color: #818cf8; }
+
+/* ── Mobile ── */
+@media (max-width: 680px) {
+  .tech-split {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .tech-content { padding: 28px 20px 20px; order: 1; }
+  .tech-visual  { min-height: 220px; order: 2; }
+  .tech-row { grid-template-columns: 72px 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-scan,
+  .tn-p1,
+  .tn-p2 { animation: none; }
+}
