@@ -1827,7 +1827,6 @@ textarea.form-input { resize: vertical; min-height: 130px; }
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 28px 32px;
-  max-width: 480px;
 }
 .rr-industry {
   display: inline-block;
