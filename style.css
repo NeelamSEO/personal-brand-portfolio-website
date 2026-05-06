@@ -2207,3 +2207,43 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 
 .svc-panel:not(.active) .svc-panel-icon { animation: none !important; }
 @media (prefers-reduced-motion: reduce) { .svc-panel-icon { animation: none !important; } }
+
+/* ── MICRO INTERACTIONS ── */
+
+/* Cursor glow */
+#cursor-glow {
+  position: fixed; top: 0; left: 0; z-index: 9998;
+  width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,147,58,.1) 0%, transparent 65%);
+  pointer-events: none; will-change: transform;
+  opacity: 0; transition: opacity 0.4s ease, width 0.3s ease, height 0.3s ease;
+}
+#cursor-glow.active { opacity: 1; }
+#cursor-glow.glow-btn {
+  width: 520px; height: 520px;
+  background: radial-gradient(circle, rgba(201,147,58,.18) 0%, transparent 55%);
+}
+
+/* Button: smooth scale + active press */
+.btn { transition: background .2s, color .2s, border-color .2s, transform .16s ease, box-shadow .2s; }
+.btn:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+.btn:active { transform: scale(0.97) !important; box-shadow: none !important; }
+
+/* Hover lift on cards that lacked it */
+.svc-deliverable-card { transition: transform .22s ease, box-shadow .22s ease; }
+.svc-deliverable-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.07); }
+
+.svc-why-card { transition: transform .22s ease, box-shadow .22s ease; }
+.svc-why-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.07); }
+
+.svc-faq-item { transition: transform .2s ease, border-color .2s; }
+.svc-faq-item:hover { transform: translateX(4px); }
+
+/* Ensure tilt-enabled cards have smooth baseline transition */
+.card, .proof-card, .portfolio-card, .blog-card { transition: transform .25s ease, box-shadow .25s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn:hover, .btn:active { transform: none !important; }
+  .svc-deliverable-card:hover, .svc-why-card:hover, .svc-faq-item:hover { transform: none; }
+  #cursor-glow { display: none; }
+}
