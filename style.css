@@ -2368,3 +2368,59 @@ textarea.form-input { resize: vertical; min-height: 130px; }
     gap: 28px;
   }
 }
+
+/* ── SERVICES RESULTS SECTION (dark variant) ── */
+.svc-results-section { background: var(--dark); padding: 80px 0; }
+.svc-results-section .section-header .label { color: var(--gold); }
+.svc-results-section .section-header h2 { color: var(--white); }
+.svc-results-section .section-header .section-sub { color: rgba(255,255,255,.55); }
+
+.svc-results-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin: 48px 0;
+  padding: 36px 0;
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.svc-results-counter-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.svc-results-num {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.svc-results-lbl {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,.55);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Dark overrides for chart + bars inside the dark section */
+.svc-results-section .rs-chart-wrap {
+  background: rgba(255,255,255,.05);
+  border-color: rgba(255,255,255,.1);
+}
+.svc-results-section .rs-chart-title { color: rgba(255,255,255,.9); }
+.svc-results-section .rs-chart-caption { color: rgba(255,255,255,.38); }
+.svc-results-section .rs-chart-label { fill: rgba(255,255,255,.38); }
+.svc-results-section .rs-area { fill: rgba(201,147,58,.15); }
+.svc-results-section .rs-bar-label { color: rgba(255,255,255,.82); }
+.svc-results-section .rs-bar-track { background: rgba(255,255,255,.12); }
+
+@media (max-width: 640px) {
+  .svc-results-strip { grid-template-columns: repeat(2, 1fr); }
+}
