@@ -935,18 +935,22 @@
   </div>
 
   <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const revealAll = (sel, cls) => document.querySelectorAll(sel).forEach(el => el.classList.add(...cls));
 
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const srObs = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('sr-visible'); srObs.unobserve(e.target); } });
-      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-      document.querySelectorAll('.sr').forEach(el => srObs.observe(el));
+    if (!window.IntersectionObserver || reduceMotion) {
+      revealAll('.fade-up', ['visible', 'is-visible']);
+      revealAll('.sr', ['sr-visible', 'is-visible']);
     } else {
-      document.querySelectorAll('.sr').forEach(el => el.classList.add('sr-visible'));
+      const fuObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible', 'is-visible'); fuObs.unobserve(e.target); } });
+      }, { threshold: 0.1, rootMargin: '0px 0px -20% 0px' });
+      document.querySelectorAll('.fade-up').forEach(el => fuObs.observe(el));
+
+      const srObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('sr-visible', 'is-visible'); srObs.unobserve(e.target); } });
+      }, { threshold: 0.1, rootMargin: '0px 0px -20% 0px' });
+      document.querySelectorAll('.sr').forEach(el => srObs.observe(el));
     }
   </script>
 <script src="micro.js"></script>

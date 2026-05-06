@@ -698,16 +698,23 @@
 
 /* ── Scroll-based storytelling ── */
 (function () {
-  if (!window.IntersectionObserver) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function revealAll() {
+    document.querySelectorAll('.sr').forEach(function (el) {
+      el.classList.add('sr-visible', 'is-visible');
+    });
+  }
+
+  if (reduceMotion || !window.IntersectionObserver) { revealAll(); return; }
 
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (!entry.isIntersecting) return;
-      entry.target.classList.add('sr-visible');
+      entry.target.classList.add('sr-visible', 'is-visible');
       observer.unobserve(entry.target);
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -20% 0px' });
 
   function watch(el, dir) {
     if (!el) return;
