@@ -940,7 +940,7 @@
 
     if (!window.IntersectionObserver || reduceMotion) {
       revealAll('.fade-up', ['visible', 'is-visible']);
-      revealAll('.sr', ['sr-visible', 'is-visible']);
+      revealAll('.sr, .sr-card', ['sr-visible', 'is-visible']);
     } else {
       const fuObs = new IntersectionObserver((entries) => {
         entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible', 'is-visible'); fuObs.unobserve(e.target); } });

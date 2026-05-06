@@ -701,7 +701,7 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function revealAll() {
-    document.querySelectorAll('.sr').forEach(function (el) {
+    document.querySelectorAll('.sr, .sr-card').forEach(function (el) {
       el.classList.add('sr-visible', 'is-visible');
     });
   }
@@ -733,6 +733,16 @@
     }
   }
 
+  /* Card variant — scale(0.98) pop on top of slide */
+  function watchCards(selector, staggerMs) {
+    var els = document.querySelectorAll(selector);
+    for (var i = 0; i < els.length; i++) {
+      els[i].classList.add('sr', 'sr-card');
+      els[i].style.transitionDelay = (i * staggerMs) + 'ms';
+      observer.observe(els[i]);
+    }
+  }
+
   /* Singles — direction gives the slide axis */
   watch(document.querySelector('.svc-quick-nav'),                             'up');
   watch(document.querySelector('.svc-who-section .section-header'),           'up');
@@ -746,10 +756,10 @@
   watch(document.querySelector('.svc-faq-cta'),                               'up');
 
   /* Stagger groups — each item triggers independently as it enters view */
-  watchGroup('.pf-industry-chip',    55);
-  watchGroup('.svc-deliverable-card', 45);
-  watchGroup('.svc-why-card',        70);
-  watchGroup('.svc-faq-item',        50);
+  watchGroup('.pf-industry-chip', 40);
+  watchCards('.svc-deliverable-card', 50);
+  watchCards('.svc-why-card', 65);
+  watchGroup('.svc-faq-item', 55);
 
 }());
 </script>
