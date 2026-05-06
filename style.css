@@ -917,29 +917,23 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 .footer-cta-strip .btn-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
 /* ── FOOTER ── */
-.footer { background: linear-gradient(180deg, #111009 0%, #0e0c0a 100%); color: var(--white); }
+.footer {
+  background: #1a1814; color: var(--white);
+  border-top: 1px solid rgba(255,255,255,.08);
+}
 
-/* Top logo bar */
-.footer-top {
-  border-bottom: 1px solid rgba(255,255,255,.07);
-  padding: 44px 0 36px;
-}
-.footer-top-inner {
-  display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
-}
 .footer-logo-wrap { display: flex; align-items: center; gap: 12px; }
 .footer-logo-name { font-size: 15px; font-weight: 800; letter-spacing: -0.02em; color: var(--white); display: block; }
 .footer-logo-role { font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: .06em; display: block; }
-.footer-tagline { font-size: 13.5px; color: rgba(255,255,255,.45); font-weight: 500; max-width: 380px; line-height: 1.6; text-align: right; }
+.footer-tagline { font-size: 13px; color: rgba(255,255,255,.42); font-weight: 500; line-height: 1.65; margin-top: 14px; }
 
-/* 4-column grid */
+/* 3-column grid */
 .footer-grid {
   display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 40px; padding: 48px 0 52px;
+  gap: 40px; padding: 44px 0 40px;
   border-bottom: 1px solid rgba(255,255,255,.07);
 }
-.footer-grid-3col { grid-template-columns: 1.2fr 1fr 1.2fr; }
-.footer-about-bio { font-size: 13px; color: rgba(255,255,255,.45); line-height: 1.65; }
+.footer-grid-3col { grid-template-columns: 1.6fr 1fr 1.3fr; }
 .footer-cta-btn { margin-top: 18px; display: inline-block; }
 
 .footer-col-title {
@@ -973,9 +967,9 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 .footer-connect-link svg { flex-shrink: 0; opacity: .7; }
 
 /* Bottom strip */
-.footer-bottom { padding: 22px 0; }
-.footer-bottom-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
-.footer-bottom p { font-size: 12.5px; color: rgba(255,255,255,.3); }
+.footer-bottom { padding: 18px 0; }
+.footer-bottom-inner { display: flex; justify-content: center; align-items: center; }
+.footer-bottom p { font-size: 12px; color: rgba(255,255,255,.28); }
 
 /* ── PAGE HERO (inner pages) ── */
 .page-hero {
@@ -1421,7 +1415,7 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 @media (max-width: 1020px) {
   .cols-4 { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
-  .footer-grid-3col { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid-3col { grid-template-columns: 1.4fr 1fr 1.3fr; }
   .proof-cards-grid { grid-template-columns: repeat(2, 1fr); }
   .tools-logo-grid { grid-template-columns: repeat(2, 1fr); }
   .pf-trust-points { grid-template-columns: repeat(2, 1fr); }
@@ -1456,16 +1450,19 @@ textarea.form-input { resize: vertical; min-height: 130px; }
   .cols-3 { grid-template-columns: 1fr; }
   .cols-4 { grid-template-columns: 1fr; }
   .footer-grid,
-  .footer-grid-3col { grid-template-columns: 1fr; padding: 44px 0 36px; gap: 28px; }
-  .footer-top-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .footer-tagline { text-align: left; }
+  .footer-grid-3col { grid-template-columns: 1fr; padding: 36px 0 28px; gap: 28px; }
+  .footer-col { text-align: center; }
+  .footer-logo-wrap { justify-content: center; }
+  .footer-tagline { margin-top: 12px; }
+  .footer-connect-list { align-items: center; }
+  .footer-cta-btn { width: 100%; text-align: center; display: block; box-sizing: border-box; }
   .proof-cards-grid { grid-template-columns: 1fr; }
   .audit-checklist { grid-template-columns: 1fr; }
   .footer-cta-strip .btn-actions { flex-direction: column; }
   .lm-actions { flex-direction: column; width: 100%; }
   .lm-actions .btn { width: 100%; }
   .contact-form, .service-block { padding: 28px 22px; }
-  .footer-bottom-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .footer-bottom-inner { justify-content: center; }
   .contact-box-dark { padding: 26px 22px; border-radius: 22px; }
   .audit-cta-box { padding: 26px 22px; border-radius: 22px; }
   .contact-actions { flex-direction: column; width: 100%; }
