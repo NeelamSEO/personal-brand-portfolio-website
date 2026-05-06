@@ -1403,7 +1403,7 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 }
 
 @media (max-width: 640px) {
-  .main-nav { display: none; }
+  .main-nav { display: none; } /* overridden below when .nav-open */
   .section, .page-hero { padding: 60px 0; }
   .hero { padding: 56px 0 48px; }
   h1 { font-size: 36px; }
@@ -2423,4 +2423,189 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 
 @media (max-width: 640px) {
   .svc-results-strip { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ════════════════════════════════════════
+   MOBILE OPTIMIZATIONS
+   All rules below target ≤640px unless noted
+════════════════════════════════════════ */
+
+/* ── Hamburger button ── */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  min-width: 44px;
+  min-height: 44px;
+  flex-shrink: 0;
+  z-index: 1002;
+}
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--dark);
+  border-radius: 2px;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+  transform-origin: center;
+}
+/* X state */
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Hero dark header — white hamburger lines */
+.hero .nav-toggle span,
+.svc-hero .nav-toggle span { background: var(--white); }
+
+/* ── Mobile nav drawer ── */
+@media (max-width: 640px) {
+  .nav-toggle { display: flex; }
+  .nav-cta-desktop { display: none !important; }
+
+  .main-nav {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--white);
+    padding: 80px 32px 48px;
+    z-index: 1001;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 0;
+  }
+  .main-nav.nav-open { transform: translateX(0); }
+
+  .main-nav a {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .main-nav a:last-child { border-bottom: none; }
+  .main-nav a.active { color: var(--gold); }
+
+  /* Keep header above the drawer */
+  .site-header { z-index: 1003; position: relative; }
+}
+
+/* ── Touch targets: min 44×44px ── */
+.btn { min-height: 44px; }
+.btn-sm { min-height: 40px; }
+.svc-tab { min-height: 44px; }
+.svc-faq-q { min-height: 44px; }
+
+/* ── Hero: mobile stacking ── */
+@media (max-width: 640px) {
+  .hero { padding: 48px 0 40px; }
+  .hero-proof-hook,
+  .hero-emotional-hook,
+  .hero-diff-line,
+  .hero-proof-line { display: none; }
+  .hero-sub { font-size: 16px; margin-bottom: 24px; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .hero-micro-friction { text-align: center; }
+  .hero-profile-img { width: 180px; height: 180px; }
+  .mini-dashboard { display: none; }
+
+  /* hero stat trust badges */
+  .hero-proof-stats { flex-direction: column; gap: 6px; }
+}
+
+/* ── Services page: interactive tabs ── */
+@media (max-width: 900px) {
+  /* Scrollable tab strip instead of wrapping pills */
+  .svc-tab-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    position: static;
+    padding: 10px 4px;
+    gap: 6px;
+    border-radius: 16px;
+  }
+  .svc-tab-list::-webkit-scrollbar { display: none; }
+  .svc-tab {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .svc-panels { border-radius: 20px; }
+  .svc-panel { padding: 28px 20px; }
+}
+
+@media (max-width: 640px) {
+  .svc-panel-header { flex-direction: column !important; gap: 12px; align-items: flex-start; }
+  .svc-panel-cta { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .svc-panel-cta .btn { width: 100%; justify-content: center; }
+  .svc-start-inner { flex-direction: column; gap: 20px; }
+  .svc-start-inner .btn { width: 100%; justify-content: center; }
+  /* FAQ CTAs */
+  .svc-faq-cta { flex-direction: column; }
+  .svc-faq-cta .btn { width: 100%; justify-content: center; }
+}
+
+/* ── Hero dashboard strip: 2-col on very small screens ── */
+@media (max-width: 480px) {
+  .hd-metrics { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .hero-dash-card { padding: 16px; }
+  .hd-num { font-size: 22px; }
+}
+
+/* ── Results snapshot: single column earlier ── */
+@media (max-width: 640px) {
+  .results-snapshot-grid { grid-template-columns: 1fr; gap: 20px; }
+  .rs-chart-wrap { padding: 20px 16px 16px; }
+  .rs-bars-wrap { gap: 20px; }
+  .svc-results-strip { padding: 24px 0; margin: 32px 0; }
+}
+
+/* ── Disable heavy CSS animations on mobile/touch ── */
+@media (max-width: 768px) {
+  .svc-hero-bg { animation: none; will-change: auto; }
+  .svc-bubble-wrap { display: none; }
+  /* Reduce scroll-reveal translate distance */
+  .sr { transform: translateY(16px); }
+  .sr.sr-left, .sr.sr-right { transform: translateY(16px); }
+}
+
+/* ── Process strip: wrap on small screens ── */
+@media (max-width: 640px) {
+  .process-strip-inner { flex-wrap: wrap; gap: 16px; justify-content: center; }
+  .ps-line { display: none; }
+}
+
+/* ── Sticky CTA: only show on mobile ── */
+.sticky-cta-bar { display: none; }
+@media (max-width: 640px) {
+  .sticky-cta-bar { display: flex; align-items: center; gap: 10px; }
+}
+
+/* ── Fast loading: font-display already swap via Google URL ── */
+/* Ensure images don't block layout */
+img { height: auto; max-width: 100%; }
+
+/* ── Reduced motion: disable all transforms globally ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .sr { opacity: 1 !important; transform: none !important; }
+  .svc-hero-bg { animation: none; }
 }

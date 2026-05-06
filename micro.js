@@ -1,7 +1,29 @@
 (function () {
   'use strict';
 
-  // Skip touch devices and reduced motion
+  /* ─────────────────────────────────────────
+     0. MOBILE NAV TOGGLE (all devices)
+  ───────────────────────────────────────── */
+  var navToggle = document.querySelector('.nav-toggle');
+  var mainNav   = document.querySelector('.main-nav');
+
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', function () {
+      var isOpen = mainNav.classList.toggle('nav-open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    // Close on any nav link click
+    mainNav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        mainNav.classList.remove('nav-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  // Skip touch devices and reduced motion for all visual effects below
   if ('ontouchstart' in window) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
