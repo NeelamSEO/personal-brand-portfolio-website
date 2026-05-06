@@ -3212,9 +3212,9 @@ img { height: auto; max-width: 100%; }
   position: absolute;
   left: 0; right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(74,222,128,0.6), transparent);
+  background: linear-gradient(90deg, transparent, rgba(74,222,128,0.35), transparent);
   will-change: transform;
-  animation: techScan 3s linear infinite;
+  animation: techScan 5s ease-in-out infinite;
 }
 
 @keyframes techScan {
@@ -3251,12 +3251,13 @@ img { height: auto; max-width: 100%; }
 .tn-services { top: 80px;  left: 12px; }
 .tn-blog     { top: 80px;  left: 50%; transform: translateX(-50%); }
 .tn-contact  { top: 80px;  right: 12px; }
-.tn-p1       { top: 156px; left: 12px; animation: techBlink 4s ease-in-out infinite; }
-.tn-p2       { top: 156px; right: 12px; border-color: rgba(239,68,68,0.5); color: rgba(239,68,68,0.9); background: rgba(239,68,68,0.08); animation: techBlink 4s ease-in-out infinite 1s; }
+.tn-p1       { top: 156px; left: 12px; animation: techBlink 8s ease-in-out infinite; }
+.tn-p2       { top: 156px; right: 12px; border-color: rgba(239,68,68,0.5); color: rgba(239,68,68,0.9); background: rgba(239,68,68,0.08); animation: techBlink 8s ease-in-out infinite 4s; }
 
 @keyframes techBlink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.4; }
+  0%, 70%, 100% { opacity: 1; }
+  80%            { opacity: 0.35; }
+  90%            { opacity: 0.9; }
 }
 
 /* Diagnostic labels */
