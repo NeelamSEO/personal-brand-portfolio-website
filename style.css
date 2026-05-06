@@ -3752,3 +3752,152 @@ img { height: auto; max-width: 100%; }
   }
   .svc-final-cta-actions .btn { width: auto; }
 }
+
+/* ============================================================
+   CASE STUDIES PAGE — new layout classes
+   ============================================================ */
+
+/* Metrics strip */
+.cs-metrics-section { padding: 0 0 64px; }
+.cs-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.cs-metric-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,.04);
+  transition: box-shadow .2s, transform .2s;
+}
+.cs-metric-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.08); transform: translateY(-2px); }
+.cs-metric-stat {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+.cs-metric-label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-top: 8px;
+  line-height: 1.3;
+}
+.cs-metric-context {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* Implementation list */
+.cs-impl-list {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cs-impl-list li {
+  font-size: 0.9rem;
+  color: var(--dark);
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.45;
+}
+.cs-impl-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 0.78rem;
+  top: 1px;
+}
+
+/* Screenshot placeholder */
+.cs-screenshot-slot {
+  margin: 24px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1.5px dashed var(--border);
+  background: #f9f8f6;
+}
+.cs-screenshot-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 36px 24px;
+  text-align: center;
+}
+.cs-screenshot-icon {
+  font-size: 1.6rem;
+  color: var(--gold);
+  line-height: 1;
+}
+.cs-screenshot-text {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+.cs-screenshot-note {
+  font-size: 0.74rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Results grid */
+.cs-results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+.cs-result-item {
+  background: #f5f3ef;
+  border-radius: 8px;
+  padding: 14px 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cs-result-item strong {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--dark);
+  line-height: 1.1;
+}
+.cs-result-item span {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* CTA row inside each case study card */
+.cs-cta-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.cs-cta-row .btn { flex-shrink: 0; }
+
+/* Mobile */
+@media (max-width: 700px) {
+  .cs-metrics-grid { grid-template-columns: 1fr; gap: 16px; }
+  .cs-results-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .cs-cta-row { flex-direction: column; }
+  .cs-cta-row .btn { width: 100%; text-align: center; }
+}
