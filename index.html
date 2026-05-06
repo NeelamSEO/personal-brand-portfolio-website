@@ -165,7 +165,7 @@
           <div class="hd-metrics">
             <div class="hd-metric">
               <div class="hd-metric-top">
-                <span class="hd-num">+47%</span>
+                <span class="hd-num counter" data-from="0" data-to="47" data-prefix="+" data-suffix="%">+47%</span>
                 <span class="hd-delta up">&#8593; 18%</span>
               </div>
               <span class="hd-lbl">Maps Visibility</span>
@@ -173,7 +173,7 @@
             </div>
             <div class="hd-metric">
               <div class="hd-metric-top">
-                <span class="hd-num">+32</span>
+                <span class="hd-num counter" data-from="0" data-to="32" data-prefix="+" data-suffix="">+32</span>
                 <span class="hd-delta up">&#8593; +8</span>
               </div>
               <span class="hd-lbl">GBP Calls</span>
@@ -181,7 +181,7 @@
             </div>
             <div class="hd-metric">
               <div class="hd-metric-top">
-                <span class="hd-num">#3</span>
+                <span class="hd-num counter" data-from="10" data-to="3" data-prefix="#" data-suffix="">#3</span>
                 <span class="hd-delta up">&#8593; 4 spots</span>
               </div>
               <span class="hd-lbl">Avg Local Rank</span>
@@ -189,7 +189,7 @@
             </div>
             <div class="hd-metric">
               <div class="hd-metric-top">
-                <span class="hd-num">8x</span>
+                <span class="hd-num counter" data-from="1" data-to="8" data-prefix="" data-suffix="x">8x</span>
                 <span class="hd-delta up">&#8593; +3x</span>
               </div>
               <span class="hd-lbl">AI Mentions</span>
@@ -332,19 +332,19 @@
           <div class="cs-preview-right">
             <div class="cs-stat-grid">
               <div class="cs-stat-box">
-                <span class="cs-stat-num">+180%</span>
+                <span class="cs-stat-num counter" data-from="0" data-to="180" data-prefix="+" data-suffix="%">+180%</span>
                 <span class="cs-stat-lbl">GBP Calls</span>
               </div>
               <div class="cs-stat-box">
-                <span class="cs-stat-num">60d</span>
+                <span class="cs-stat-num counter" data-from="0" data-to="60" data-prefix="" data-suffix="d">60d</span>
                 <span class="cs-stat-lbl">Timeline</span>
               </div>
               <div class="cs-stat-box">
-                <span class="cs-stat-num">#1</span>
+                <span class="cs-stat-num counter" data-from="8" data-to="1" data-prefix="#" data-suffix="">#1</span>
                 <span class="cs-stat-lbl">Local Pack</span>
               </div>
               <div class="cs-stat-box">
-                <span class="cs-stat-num">+44</span>
+                <span class="cs-stat-num counter" data-from="0" data-to="44" data-prefix="+" data-suffix="">+44</span>
                 <span class="cs-stat-lbl">New Reviews</span>
               </div>
             </div>
@@ -392,6 +392,97 @@
         </div>
       </div>
     </div>
+
+    <!-- RESULTS SNAPSHOT -->
+    <section class="section results-snapshot-section" id="results">
+      <div class="container">
+        <div class="section-header sr">
+          <span class="label">Client Results</span>
+          <h2>Real numbers from real campaigns</h2>
+          <p class="section-sub">Across local SEO, GBP, and AI search — these are the kinds of shifts clients experience.</p>
+        </div>
+        <div class="results-snapshot-grid">
+
+          <!-- SVG line chart -->
+          <div class="rs-chart-wrap sr sr-left">
+            <div class="rs-chart-header">
+              <span class="rs-chart-title">GBP Call Growth (6 months)</span>
+              <span class="rs-chart-badge">+180%</span>
+            </div>
+            <svg class="rs-line-chart" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Grid lines -->
+              <line x1="10" y1="100" x2="290" y2="100" stroke="#e8e3db" stroke-width="1"/>
+              <line x1="10" y1="67"  x2="290" y2="67"  stroke="#e8e3db" stroke-width="1" stroke-dasharray="4 3"/>
+              <line x1="10" y1="33"  x2="290" y2="33"  stroke="#e8e3db" stroke-width="1" stroke-dasharray="4 3"/>
+              <!-- Y labels -->
+              <text x="2"  y="104" class="rs-chart-label">0</text>
+              <text x="2"  y="71"  class="rs-chart-label">6</text>
+              <text x="2"  y="37"  class="rs-chart-label">9</text>
+              <!-- Month labels -->
+              <text x="8"   y="116" class="rs-chart-label">M1</text>
+              <text x="64"  y="116" class="rs-chart-label">M2</text>
+              <text x="120" y="116" class="rs-chart-label">M3</text>
+              <text x="176" y="116" class="rs-chart-label">M4</text>
+              <text x="232" y="116" class="rs-chart-label">M5</text>
+              <text x="268" y="116" class="rs-chart-label">M6</text>
+              <!-- Area fill (fades in after line draws) -->
+              <path class="rs-area" d="M10,95 L68,88 L126,74 L184,52 L242,24 L290,10 L290,100 L10,100 Z"/>
+              <!-- Line path (stroke-dashoffset animation) -->
+              <path class="rs-line" d="M10,95 L68,88 L126,74 L184,52 L242,24 L290,10"/>
+              <!-- Data points -->
+              <circle cx="10"  cy="95" r="3.5" fill="#c9933a"/>
+              <circle cx="68"  cy="88" r="3.5" fill="#c9933a"/>
+              <circle cx="126" cy="74" r="3.5" fill="#c9933a"/>
+              <circle cx="184" cy="52" r="3.5" fill="#c9933a"/>
+              <circle cx="242" cy="24" r="3.5" fill="#c9933a"/>
+              <circle cx="290" cy="10" r="3.5" fill="#c9933a"/>
+            </svg>
+            <p class="rs-chart-caption">Cleaning business, South East UK &mdash; 60 days post-optimisation</p>
+          </div>
+
+          <!-- Progress bars -->
+          <div class="rs-bars-wrap sr sr-right">
+            <div class="rs-bar-item">
+              <div class="rs-bar-meta">
+                <span class="rs-bar-label">Local Search Visibility</span>
+                <span class="rs-bar-val">+47%</span>
+              </div>
+              <div class="rs-bar-track">
+                <div class="rs-bar-fill" data-width="47"></div>
+              </div>
+            </div>
+            <div class="rs-bar-item">
+              <div class="rs-bar-meta">
+                <span class="rs-bar-label">GBP Call Actions</span>
+                <span class="rs-bar-val">+180%</span>
+              </div>
+              <div class="rs-bar-track">
+                <div class="rs-bar-fill" data-width="90"></div>
+              </div>
+            </div>
+            <div class="rs-bar-item">
+              <div class="rs-bar-meta">
+                <span class="rs-bar-label">Review Count Growth</span>
+                <span class="rs-bar-val">2&times;</span>
+              </div>
+              <div class="rs-bar-track">
+                <div class="rs-bar-fill" data-width="67"></div>
+              </div>
+            </div>
+            <div class="rs-bar-item">
+              <div class="rs-bar-meta">
+                <span class="rs-bar-label">AI Search Mentions</span>
+                <span class="rs-bar-val">8&times;</span>
+              </div>
+              <div class="rs-bar-track">
+                <div class="rs-bar-fill" data-width="80"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
     <!-- OBJECTION HANDLING -->
     <section class="objection-section">
@@ -847,5 +938,6 @@
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
 <script src="micro.js"></script>
+<script src="viz.js"></script>
 </body>
 </html>
