@@ -946,6 +946,59 @@
     }(tabs[i]));
   }
 
+  // Hash-based tab activation — handles incoming links from portfolio page
+  var HASH_PANEL = {
+    'local-seo':                   'panel-local-seo',
+    'gbp-seo':                     'panel-gbp-seo',
+    'google-business-profile-seo': 'panel-gbp-seo',
+    'geo':                         'panel-geo',
+    'aeo':                         'panel-aeo',
+    'technical-seo':               'panel-technical-seo',
+    'content-strategy':            'panel-content-strategy',
+    'service-page-seo':            'panel-service-page-seo',
+    'local-landing-pages':         'panel-local-landing-pages'
+  };
+
+  function activateFromHash() {
+    var hash = (window.location.hash || '').replace('#', '');
+    var panelId = HASH_PANEL[hash];
+    if (!panelId) return;
+    var targetTab = null;
+    for (var k = 0; k < tabs.length; k++) {
+      if (tabs[k].dataset.target === panelId) { targetTab = tabs[k]; break; }
+    }
+    if (!targetTab) return;
+    setTimeout(function () {
+      // Force-activate: bypass current===next guard by resetting state directly
+      for (var m = 0; m < tabs.length; m++) {
+        tabs[m].classList.remove('active');
+        tabs[m].setAttribute('aria-selected', 'false');
+      }
+      for (var n = 0; n < panels.length; n++) {
+        panels[n].classList.remove('active', 'visible');
+      }
+      targetTab.classList.add('active');
+      targetTab.setAttribute('aria-selected', 'true');
+      var targetPanel = document.getElementById(panelId);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+        current = targetPanel;
+        switching = false;
+        requestAnimationFrame(function () {
+          targetPanel.classList.add('visible');
+          animateIcon(targetPanel);
+        });
+      }
+      scrollTabIntoView(targetTab);
+      setTimeout(function () {
+        if (panelsEl) { panelsEl.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      }, 260);
+    }, 180);
+  }
+
+  activateFromHash();
+  window.addEventListener('hashchange', activateFromHash);
+
 }());
 
 /* ── Scroll-based storytelling ── */
