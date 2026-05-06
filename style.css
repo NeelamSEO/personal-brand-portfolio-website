@@ -925,7 +925,7 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 .footer-logo-wrap { display: flex; align-items: center; gap: 12px; }
 .footer-logo-name { font-size: 15px; font-weight: 800; letter-spacing: -0.02em; color: var(--white); display: block; }
 .footer-logo-role { font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: .06em; display: block; }
-.footer-tagline { font-size: 13px; color: rgba(255,255,255,.42); font-weight: 500; line-height: 1.65; margin-top: 14px; }
+.footer-tagline { font-size: 13px; color: rgba(255,255,255,.42); font-weight: 500; line-height: 1.65; margin-top: 18px; }
 
 /* 3-column grid */
 .footer-grid {
@@ -967,7 +967,7 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 .footer-connect-link svg { flex-shrink: 0; opacity: .7; }
 
 /* Microcopy + markets */
-.footer-microcopy { font-size: 11.5px; color: rgba(255,255,255,.26); line-height: 1.65; margin-top: 10px; }
+.footer-microcopy { font-size: 11.5px; color: rgba(255,255,255,.26); line-height: 1.65; margin-top: 14px; }
 .footer-meta-item { font-size: 13px; color: rgba(255,255,255,.42); display: flex; flex-direction: column; gap: 2px; }
 .footer-meta-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.32); }
 
@@ -1463,7 +1463,7 @@ textarea.form-input { resize: vertical; min-height: 130px; }
   .footer-grid-3col { grid-template-columns: 1fr; padding: 36px 0 28px; gap: 28px; }
   .footer-col { text-align: center; }
   .footer-logo-wrap { justify-content: center; }
-  .footer-tagline { margin-top: 12px; }
+  .footer-tagline { margin-top: 16px; }
   .footer-connect-list { align-items: center; }
   .footer-cta-btn { width: 100%; text-align: center; display: block; box-sizing: border-box; }
   .proof-cards-grid { grid-template-columns: 1fr; }
