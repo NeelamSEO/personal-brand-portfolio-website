@@ -2153,3 +2153,57 @@ textarea.form-input { resize: vertical; min-height: 130px; }
   opacity: 1;
   transform: none;
 }
+
+/* ── PANEL THEMING: DARK VARIANT ── */
+.svc-panels { overflow: hidden; }
+.svc-panel { position: relative; overflow: hidden; }
+
+.svc-panel[data-theme="dark"] { background: var(--dark); }
+.svc-panel[data-theme="dark"] .svc-panel-header { flex-direction: row-reverse; }
+.svc-panel[data-theme="dark"] .card-tag { background: rgba(255,255,255,.1); color: rgba(255,255,255,.7); }
+.svc-panel[data-theme="dark"] h3 { color: var(--white); }
+.svc-panel[data-theme="dark"] .svc-panel-row { border-top-color: rgba(255,255,255,.1); }
+.svc-panel[data-theme="dark"] .svc-row-label { color: rgba(255,255,255,.38); }
+.svc-panel[data-theme="dark"] .svc-outcome-row .svc-row-label { color: var(--gold-light); }
+.svc-panel[data-theme="dark"] p { color: rgba(255,255,255,.6); }
+.svc-panel[data-theme="dark"] .svc-panel-cta { border-top-color: rgba(255,255,255,.1); }
+.svc-panel[data-theme="dark"] .svc-cta-micro { color: rgba(255,255,255,.38); }
+.svc-panel[data-theme="dark"] .btn-dark { background: var(--gold); color: var(--dark); }
+.svc-panel[data-theme="dark"] .btn-dark:hover { background: var(--gold-light); }
+.svc-panel[data-theme="dark"] .svc-panel-icon { background: rgba(201,147,58,.18); color: var(--gold-light); }
+
+/* ── DECORATIVE BG CIRCLES ── */
+.svc-panel-deco {
+  position: absolute; border-radius: 50%;
+  pointer-events: none; will-change: transform;
+}
+#panel-local-seo .svc-panel-deco    { width:200px;height:200px;background:var(--gold);opacity:.05;top:-60px;right:-60px; }
+#panel-gbp-seo .svc-panel-deco     { width:260px;height:260px;background:rgba(255,255,255,.04);opacity:1;bottom:-80px;left:-60px; }
+#panel-geo .svc-panel-deco         { width:180px;height:180px;background:var(--gold);opacity:.06;bottom:-40px;right:-40px; }
+#panel-aeo .svc-panel-deco         { width:220px;height:220px;background:rgba(201,147,58,.1);opacity:1;top:-60px;right:-40px; }
+#panel-technical-seo .svc-panel-deco { width:180px;height:180px;background:var(--gold);opacity:.04;top:-50px;left:-50px; }
+#panel-content-strategy .svc-panel-deco { width:200px;height:200px;background:rgba(201,147,58,.08);opacity:1;bottom:-50px;right:-30px; }
+#panel-service-page-seo .svc-panel-deco { width:160px;height:160px;background:var(--gold);opacity:.05;bottom:-30px;left:-30px; }
+#panel-local-landing-pages .svc-panel-deco { width:240px;height:240px;background:rgba(255,255,255,.03);opacity:1;top:-70px;left:-60px; }
+
+/* ── ICON ANIMATIONS ── */
+.svc-panel-icon[data-anim="bounce"] { animation: iconPop .38s ease both, piaBounce 2.4s .45s ease-in-out infinite; }
+.svc-panel-icon[data-anim="pulse"]  { animation: iconPop .38s ease both, piaPulse  2s   .45s ease-in-out infinite; }
+.svc-panel-icon[data-anim="spin"]   { animation: iconPop .38s ease both, piaSpin   12s  .45s linear infinite; }
+.svc-panel-icon[data-anim="blink"]  { animation: iconPop .38s ease both, piaBlink  3s   .45s ease-in-out infinite; }
+.svc-panel-icon[data-anim="rotate"] { animation: iconPop .38s ease both, piaRotate 4s   .45s ease-in-out infinite; }
+.svc-panel-icon[data-anim="bob"]    { animation: iconPop .38s ease both, piaBob    2.6s .45s ease-in-out infinite; }
+.svc-panel-icon[data-anim="pop"]    { animation: iconPop .38s ease both, piaPop    3s   .45s ease-in-out infinite; }
+.svc-panel-icon[data-anim="float"]  { animation: iconPop .38s ease both, piaFloat  3.5s .45s ease-in-out infinite; }
+
+@keyframes piaBounce { 0%,100%{transform:translateY(0)} 45%{transform:translateY(-6px)} 65%{transform:translateY(-2px)} }
+@keyframes piaPulse  { 0%,100%{transform:scale(1)}     50%{transform:scale(1.1)} }
+@keyframes piaSpin   { to{transform:rotate(360deg)} }
+@keyframes piaBlink  { 0%,100%{opacity:1;transform:scale(1)} 45%{opacity:.65;transform:scale(.92)} 70%{transform:scale(1.06)} }
+@keyframes piaRotate { 0%{transform:rotate(-10deg)} 50%{transform:rotate(10deg)} 100%{transform:rotate(-10deg)} }
+@keyframes piaBob    { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-5px) rotate(4deg)} }
+@keyframes piaPop    { 0%,100%{transform:scale(1)} 20%{transform:scale(1.08)} 50%{transform:scale(.96)} 75%{transform:scale(1.04)} }
+@keyframes piaFloat  { 0%,100%{transform:translateY(0)} 35%{transform:translateY(-5px)} 70%{transform:translateY(2px)} }
+
+.svc-panel:not(.active) .svc-panel-icon { animation: none !important; }
+@media (prefers-reduced-motion: reduce) { .svc-panel-icon { animation: none !important; } }
