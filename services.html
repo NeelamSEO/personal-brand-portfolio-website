@@ -829,15 +829,18 @@
 
   function scrollTabIntoView(tab) {
     if (!tabList || tabList.scrollWidth <= tabList.clientWidth) return;
-    var tabCenter = tab.offsetLeft + tab.offsetWidth / 2;
-    tabList.scrollTo({ left: tabCenter - tabList.clientWidth / 2, behavior: 'smooth' });
+    setTimeout(function () {
+      var tabCenter = tab.offsetLeft + tab.offsetWidth / 2;
+      tabList.scrollTo({ left: tabCenter - tabList.clientWidth / 2, behavior: 'smooth' });
+    }, 150);
   }
 
   function scrollPanelsIntoView() {
     if (!panelsEl) return;
     var r = panelsEl.getBoundingClientRect();
-    if (r.top < 0 || r.top > window.innerHeight * 0.6) {
-      panelsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    var inView = r.top >= -20 && r.bottom <= window.innerHeight + 20;
+    if (!inView) {
+      panelsEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   }
 
