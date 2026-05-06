@@ -68,8 +68,8 @@
      2. CARD TILT
      Subtle 3-D rotation tracking the cursor
   ───────────────────────────────────────── */
-  var TILT_MAX = 5; // degrees
-  var LIFT = -5;    // px
+  var TILT_MAX = 2.5; // degrees
+  var LIFT = -3;      // px
 
   var tiltEls = document.querySelectorAll(
     '.card, .proof-card, .portfolio-card, .blog-card, ' +
