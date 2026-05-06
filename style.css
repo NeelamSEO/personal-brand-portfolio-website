@@ -2140,3 +2140,16 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 @media (max-width: 1020px) {
   .fl-2, .fl-3, .fl-6 { display: none; }
 }
+
+/* ── SCROLL REVEAL ── */
+.sr {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.54s ease, transform 0.54s ease;
+}
+.sr.sr-left  { transform: translateX(-32px); }
+.sr.sr-right { transform: translateX(32px); }
+.sr.sr-visible {
+  opacity: 1;
+  transform: none;
+}
