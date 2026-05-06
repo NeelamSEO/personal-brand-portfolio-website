@@ -2966,3 +2966,170 @@ img { height: auto; max-width: 100%; }
   .aeo-card-3 { animation: none; }
   .aeo-highlight { animation: none; }
 }
+
+/* ═══════════════════════════════════════════
+   GBP PANEL
+═══════════════════════════════════════════ */
+#panel-gbp-seo { padding: 0; }
+
+.gbp-split {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  min-height: 460px;
+}
+
+/* ── Content left ── */
+.gbp-content {
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gbp-content h3 {
+  font-size: 1.35rem;
+  color: var(--dark);
+  line-height: 1.3;
+  margin: 4px 0 0;
+}
+
+.gbp-rows { display: flex; flex-direction: column; gap: 4px; }
+
+.gbp-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 12px;
+  align-items: baseline;
+  padding: 10px 10px 10px 0;
+  border-radius: 8px;
+  transition: background 0.2s ease, padding-left 0.2s ease;
+}
+
+.gbp-row:hover {
+  background: rgba(201,147,58,.07);
+  padding-left: 14px;
+}
+
+.gbp-row p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.gbp-row-lbl {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.gbp-lbl-problem { background: rgba(239,68,68,.1);    color: #dc2626; }
+.gbp-lbl-fix     { background: rgba(201,147,58,.15);  color: var(--gold); }
+.gbp-lbl-outcome { background: rgba(20,184,166,.12);  color: #0d9488; }
+
+/* ── Visual right: stacked review cards + pin ── */
+.gbp-visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 16px 32px 8px;
+  background: linear-gradient(160deg, #fffbf0 0%, #fef3c7 100%);
+  overflow: hidden;
+}
+
+/* Floating map pin */
+.gbp-pin {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  width: 32px;
+  height: 32px;
+  color: var(--gold);
+  will-change: transform;
+  animation: gbpPinBounce 3s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(201,147,58,0.35));
+}
+
+.gbp-pin svg { width: 100%; height: 100%; }
+
+@keyframes gbpPinBounce {
+  0%, 100% { transform: translateY(0); }
+  40%       { transform: translateY(-7px); }
+  60%       { transform: translateY(-4px); }
+}
+
+/* Stacked cards with overlap */
+.gbp-card {
+  width: 180px;
+  padding: 12px 14px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 6px 20px rgba(201,147,58,0.12);
+  will-change: transform;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.gbp-card + .gbp-card { margin-top: -12px; }
+
+.gbp-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 28px rgba(201,147,58,0.25);
+  z-index: 2;
+  position: relative;
+}
+
+.gbp-card-1 { animation: gbpFloat 7s ease-in-out infinite; }
+.gbp-card-2 { animation: gbpFloat 7s ease-in-out infinite 2s; }
+.gbp-card-3 { animation: gbpFloat 7s ease-in-out infinite 4s; }
+
+@keyframes gbpFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-4px); }
+}
+
+.gbp-stars {
+  font-size: 0.72rem;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  margin-bottom: 5px;
+}
+
+.gbp-review-text {
+  margin: 0 0 5px;
+  font-size: 0.68rem;
+  color: var(--dark);
+  line-height: 1.45;
+  font-style: italic;
+}
+
+.gbp-reviewer {
+  font-size: 0.62rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* ── Mobile ── */
+@media (max-width: 680px) {
+  .gbp-split {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .gbp-content { padding: 28px 20px 20px; order: 1; }
+  .gbp-visual  { padding: 24px 20px; order: 2; }
+  .gbp-card    { width: 100%; max-width: 260px; }
+  .gbp-card + .gbp-card { margin-top: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gbp-pin,
+  .gbp-card-1,
+  .gbp-card-2,
+  .gbp-card-3 { animation: none; }
+}
