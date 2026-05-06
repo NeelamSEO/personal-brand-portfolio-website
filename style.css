@@ -1485,6 +1485,7 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 .contact-audit-btn { margin-top: 20px; width: 100%; justify-content: center; }
 .contact-form-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
 .form-note { font-size: 13px; color: var(--muted); margin-top: 14px; }
+.form-success { font-size: 14px; color: #16a34a; font-weight: 600; margin: 0; }
 .ci-link-gold { color: var(--gold-light); }
 
 /* ── TESTIMONIALS ── */
