@@ -1501,6 +1501,8 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 .contact-audit-btn { margin-top: 20px; width: 100%; justify-content: center; }
 .contact-form-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
 .form-note { font-size: 13px; color: var(--muted); margin-top: 14px; }
+.contact-trust-line { font-size: 13px; font-weight: 600; color: #16a34a; margin: 12px 0 20px; }
+.form-label-opt { font-weight: 400; color: var(--muted); font-size: 12px; }
 .form-success { font-size: 14px; color: #16a34a; font-weight: 600; margin: 0; }
 .ci-link-gold { color: var(--gold-light); }
 
@@ -1525,6 +1527,8 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 
 /* ── CALENDLY EMBED ── */
 .calendly-section { background: var(--white); overflow: hidden; }
+.calendly-section-cta { margin-top: 16px; display: inline-block; }
+.calendly-inline-widget { min-width: 320px; height: 700px; }
 .calendly-wrap {
   width: 100%;
   max-width: 1000px;
