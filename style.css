@@ -930,6 +930,14 @@ h3 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; line-height: 1.2
 .newsletter-cta p { color: var(--muted); max-width: 520px; margin: 0 auto 28px; font-size: 16px; }
 .audit-dark { background: #0f1117; }
 .audit-dark h2 { color: var(--white); }
+.audit-dark .label { background: rgba(201,147,58,.15); color: var(--gold); }
+.audit-dark .section-sub { color: rgba(255,255,255,.45); }
+.audit-proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+.audit-proof-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09); border-radius: 14px; padding: 28px 24px; }
+.audit-proof-stat { font-size: 40px; font-weight: 900; color: var(--gold); letter-spacing: -0.03em; line-height: 1; margin-bottom: 12px; }
+.audit-proof-desc { font-size: 14px; color: rgba(255,255,255,.6); line-height: 1.6; margin-bottom: 14px; }
+.audit-proof-market { font-size: 11.5px; font-weight: 700; color: rgba(255,255,255,.3); text-transform: uppercase; letter-spacing: .06em; }
+.audit-proof-note { font-size: 11.5px; color: rgba(255,255,255,.22); font-style: italic; margin-top: 24px; text-align: center; }
 .form-group { margin-bottom: 20px; }
 .form-label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px; color: var(--dark); }
 .form-input {
@@ -1494,6 +1502,7 @@ textarea.form-input { resize: vertical; min-height: 130px; }
   .pf-process-steps { grid-template-columns: repeat(2, 1fr); }
   .pf-problems-grid { grid-template-columns: repeat(2, 1fr); }
   .pf-proof-grid { grid-template-columns: 1fr; }
+  .audit-proof-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 860px) {
