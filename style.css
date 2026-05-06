@@ -966,10 +966,20 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 .footer-connect-link:hover { color: var(--gold-light); text-decoration: underline; }
 .footer-connect-link svg { flex-shrink: 0; opacity: .7; }
 
+/* Microcopy + markets */
+.footer-microcopy { font-size: 11.5px; color: rgba(255,255,255,.26); line-height: 1.65; margin-top: 10px; }
+.footer-meta-item { font-size: 13px; color: rgba(255,255,255,.42); display: flex; flex-direction: column; gap: 2px; }
+.footer-meta-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.32); }
+
 /* Bottom strip */
-.footer-bottom { padding: 18px 0; }
-.footer-bottom-inner { display: flex; justify-content: center; align-items: center; }
+.footer-bottom { padding: 18px 0; border-top: 1px solid rgba(255,255,255,.06); }
+.footer-bottom-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
 .footer-bottom p { font-size: 12px; color: rgba(255,255,255,.28); }
+
+/* Legal links */
+.footer-legal { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+.footer-legal a { font-size: 12px; color: rgba(255,255,255,.28); font-weight: 500; transition: color .18s; text-underline-offset: 3px; }
+.footer-legal a:hover { color: rgba(255,255,255,.6); text-decoration: underline; }
 
 /* ── PAGE HERO (inner pages) ── */
 .page-hero {
@@ -1462,7 +1472,8 @@ textarea.form-input { resize: vertical; min-height: 130px; }
   .lm-actions { flex-direction: column; width: 100%; }
   .lm-actions .btn { width: 100%; }
   .contact-form, .service-block { padding: 28px 22px; }
-  .footer-bottom-inner { justify-content: center; }
+  .footer-bottom-inner { flex-direction: column; align-items: center; gap: 10px; }
+  .footer-legal { justify-content: center; gap: 14px; }
   .contact-box-dark { padding: 26px 22px; border-radius: 22px; }
   .audit-cta-box { padding: 26px 22px; border-radius: 22px; }
   .contact-actions { flex-direction: column; width: 100%; }
