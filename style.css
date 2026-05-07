@@ -8,7 +8,7 @@
   --gold: #c9933a;
   --gold-light: #f0b36b;
   --border: #e6ded2;
-  --muted: #6b6560;
+  --muted: #57514c;
   --text: #2a2520;
   --card-bg: #ffffff;
 }
@@ -997,7 +997,7 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 .footer-logo-wrap { display: flex; align-items: center; gap: 12px; }
 .footer-logo-name { font-size: 15px; font-weight: 800; letter-spacing: -0.02em; color: var(--white); display: block; }
 .footer-logo-role { font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: .06em; display: block; }
-.footer-tagline { font-size: 13px; color: rgba(255,255,255,.42); font-weight: 500; line-height: 1.65; margin-top: 18px; }
+.footer-tagline { font-size: 13px; color: rgba(255,255,255,0.78); font-weight: 500; line-height: 1.65; margin-top: 18px; }
 
 /* 3-column grid */
 .footer-grid {
@@ -1017,11 +1017,11 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 /* Link lists */
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 11px; }
 .footer-links a {
-  font-size: 13.5px; color: rgba(255,255,255,.55); font-weight: 600;
+  font-size: 13.5px; color: rgba(255,255,255,0.82); font-weight: 600;
   transition: color .18s;
   text-underline-offset: 3px; text-decoration-thickness: 1px;
 }
-.footer-links a:hover { color: var(--gold-light); text-decoration: underline; }
+.footer-links a:hover { color: rgba(255,255,255,1); text-decoration: underline; }
 
 /* Trust / Connect column */
 .footer-trust-bio {
@@ -1031,7 +1031,7 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 .footer-connect-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .footer-connect-link {
   display: flex; align-items: center; gap: 8px;
-  font-size: 13px; color: rgba(255,255,255,.55); font-weight: 600;
+  font-size: 13px; color: rgba(255,255,255,0.82); font-weight: 600;
   transition: color .18s;
   text-underline-offset: 3px; text-decoration-thickness: 1px;
 }
@@ -1043,19 +1043,19 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 .footer-social-icon svg { display: block; width: 20px; height: 20px; flex-shrink: 0; }
 
 /* Microcopy + markets */
-.footer-microcopy { font-size: 11.5px; color: rgba(255,255,255,.26); line-height: 1.65; margin-top: 14px; }
-.footer-meta-item { font-size: 13px; color: rgba(255,255,255,.42); display: flex; flex-direction: column; gap: 2px; }
-.footer-meta-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.32); }
+.footer-microcopy { font-size: 11.5px; color: rgba(255,255,255,0.72); line-height: 1.65; margin-top: 14px; }
+.footer-meta-item { font-size: 13px; color: rgba(255,255,255,0.78); display: flex; flex-direction: column; gap: 2px; }
+.footer-meta-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,0.65); }
 
 /* Bottom strip */
 .footer-bottom { padding: 18px 0; border-top: 1px solid rgba(255,255,255,.06); }
 .footer-bottom-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
-.footer-bottom p { font-size: 12px; color: rgba(255,255,255,.28); }
+.footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.72); }
 
 /* Legal links */
 .footer-legal { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
-.footer-legal a { font-size: 12px; color: rgba(255,255,255,.28); font-weight: 500; transition: color .18s; text-underline-offset: 3px; }
-.footer-legal a:hover { color: rgba(255,255,255,.6); text-decoration: underline; }
+.footer-legal a { font-size: 12px; color: rgba(255,255,255,0.72); font-weight: 500; transition: color .18s; text-underline-offset: 3px; }
+.footer-legal a:hover { color: rgba(255,255,255,1); text-decoration: underline; }
 
 /* ── PAGE HERO (inner pages) ── */
 .page-hero {
@@ -4064,6 +4064,7 @@ img { height: auto; max-width: 100%; }
   gap: 10px;
   flex-shrink: 0;
 }
+#cookie-accept { color: var(--dark); }
 
 body.cookie-consent-open {
   padding-bottom: 110px;
