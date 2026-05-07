@@ -119,10 +119,13 @@
               <li>Clear next steps you can act on</li>
             </ul>
             <p class="contact-trust-line">&#10003; Response within 24 hours. No spam.</p>
-            <form action="https://formspree.io/f/mjglrddw" method="POST">
-              <!-- TODO Neelam: change this back to https://neelamseoconsulting.com/thank-you once DNS is pointed at Vercel and the production domain resolves -->
-              <input type="hidden" name="_next" value="https://neelamseoconsulting-website.vercel.app/thank-you" />
-              <input type="hidden" name="source" value="seo-audit" />
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="9d844617-d7b3-4ef7-93b7-430dbad6895d">
+              <input type="hidden" name="subject" value="New Contact Form Message from website">
+              <input type="hidden" name="from_name" value="Neelam Contact Form">
+              <!-- TODO Neelam: change redirect value to https://neelamseoconsulting.com/thank-you once GoDaddy DNS is pointed at Vercel and the production domain resolves -->
+              <input type="hidden" name="redirect" value="https://neelamseoconsulting-website.vercel.app/thank-you">
+              <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
               <div class="form-group">
                 <label class="form-label">Your Name</label>
                 <input type="text" name="name" class="form-input" placeholder="First and last name" required />

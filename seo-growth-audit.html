@@ -294,10 +294,13 @@
           <span class="label">Request Your Audit</span>
           <h2>Tell me about your website</h2>
           <p class="audit-form-sub">Fill in the details below and I will review your website, GBP, service pages, content, and AI search visibility. You will receive clear findings and priority actions.</p>
-          <form action="https://formspree.io/f/mjglrddw" method="POST">
-            <!-- TODO Neelam: change this back to https://neelamseoconsulting.com/thank-you once DNS is pointed at Vercel and the production domain resolves -->
-            <input type="hidden" name="_next" value="https://neelamseoconsulting-website.vercel.app/thank-you" />
-            <input type="hidden" name="source" value="seo-audit-page" />
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="abecdcdc-f4e3-42ee-9309-bc7984a586af">
+            <input type="hidden" name="subject" value="New SEO Audit Request from website">
+            <input type="hidden" name="from_name" value="Neelam SEO Audit Form">
+            <!-- TODO Neelam: change redirect value to https://neelamseoconsulting.com/thank-you once GoDaddy DNS is pointed at Vercel and the production domain resolves -->
+            <input type="hidden" name="redirect" value="https://neelamseoconsulting-website.vercel.app/thank-you">
+            <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label">Your Name</label>
