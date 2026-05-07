@@ -4140,7 +4140,7 @@ body.cookie-consent-open {
 .post-article .post-toc h2 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 14px; }
 .post-layout { display: grid; grid-template-columns: 1fr 260px; gap: 56px; align-items: start; }
 .post-content { min-width: 0; }
-.post-hero-image { width: 100%; height: auto; border-radius: 16px; display: block; margin-bottom: 36px; }
+.post-hero-image { width: 100%; height: auto; border-radius: 16px; display: block; margin-bottom: 36px; object-fit: cover; }
 .post-inline-image { width: 100%; height: auto; border-radius: 12px; display: block; margin: 32px 0; }
 
 .post-header { margin-bottom: 32px; }
