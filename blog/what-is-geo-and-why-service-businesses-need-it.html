@@ -330,8 +330,91 @@
                 </li>
               </ol>
 
-              <!-- AI IMAGE PROMPT: Clean editorial illustration showing a checklist with 10 items, each item connecting to a small icon representing the action (schema, brand, content, link, etc). Use dark navy background, gold checkmarks, off-white text placeholders (no real text). Isometric perspective, 16:9 ratio. Professional editorial style. TODO Neelam: generate and save as /images/blog/what-is-geo-checklist.webp -->
-              <img src="https://placehold.co/1200x675/1c1917/c9933a?text=GEO+Checklist+Visual" alt="Visual checklist of 10 GEO actions for service businesses" width="1200" height="675" loading="lazy" class="post-inline-image">
+              <figure class="post-svg-figure" aria-labelledby="geo-checklist-caption">
+                <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The 10-point GEO checklist for service businesses, showing each item connected in a flow from audit through tracking" class="post-svg-diagram">
+                  <defs>
+                    <linearGradient id="geo-bg" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#1c1917"/>
+                      <stop offset="100%" stop-color="#27241d"/>
+                    </linearGradient>
+                    <linearGradient id="card-bg" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#27241d"/>
+                      <stop offset="100%" stop-color="#1c1917"/>
+                    </linearGradient>
+                  </defs>
+
+                  <!-- Background -->
+                  <rect width="800" height="600" fill="url(#geo-bg)" rx="12"/>
+
+                  <!-- Title -->
+                  <text x="400" y="50" text-anchor="middle" fill="#c9933a" font-family="Inter, sans-serif" font-size="22" font-weight="700">The GEO Checklist</text>
+                  <text x="400" y="76" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-family="Inter, sans-serif" font-size="13">Ten actions, in order, for service businesses</text>
+
+                  <!-- Connecting line down the centre -->
+                  <line x1="100" y1="120" x2="100" y2="540" stroke="#c9933a" stroke-width="2" stroke-dasharray="4 4" opacity="0.4"/>
+
+                  <!-- Item 1: Audit -->
+                  <circle cx="100" cy="135" r="18" fill="#c9933a"/>
+                  <text x="100" y="142" text-anchor="middle" fill="#1c1917" font-family="Inter, sans-serif" font-size="13" font-weight="700">1</text>
+                  <text x="135" y="132" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600">Audit your brand entity</text>
+                  <text x="135" y="150" fill="rgba(255,255,255,0.65)" font-family="Inter, sans-serif" font-size="12">Search yourself in Google, ChatGPT, Perplexity</text>
+
+                  <!-- Item 2: Schema -->
+                  <circle cx="100" cy="180" r="18" fill="#c9933a"/>
+                  <text x="100" y="187" text-anchor="middle" fill="#1c1917" font-family="Inter, sans-serif" font-size="13" font-weight="700">2</text>
+                  <text x="135" y="177" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600">Implement comprehensive schema</text>
+                  <text x="135" y="195" fill="rgba(255,255,255,0.65)" font-family="Inter, sans-serif" font-size="12">Organization, LocalBusiness, Service, FAQ, Person</text>
+
+                  <!-- Item 3: Answer-first -->
+                  <circle cx="100" cy="225" r="18" fill="#c9933a"/>
+                  <text x="100" y="232" text-anchor="middle" fill="#1c1917" font-family="Inter, sans-serif" font-size="13" font-weight="700">3</text>
+                  <text x="135" y="222" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600">Build answer-first content blocks</text>
+                  <text x="135" y="240" fill="rgba(255,255,255,0.65)" font-family="Inter, sans-serif" font-size="12">Direct answers AI tools can extract verbatim</text>
+
+                  <!-- Item 4: Brand mentions -->
+                  <circle cx="100" cy="270" r="18" fill="#c9933a"/>
+                  <text x="100" y="277" text-anchor="middle" fill="#1c1917" font-family="Inter, sans-serif" font-size="13" font-weight="700">4</text>
+                  <text x="135" y="267" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600">Strengthen brand mentions</text>
+                  <text x="135" y="285" fill="rgba(255,255,255,0.65)" font-family="Inter, sans-serif" font-size="12">Guest posts, podcasts, trade press features</text>
+
+                  <!-- Item 5: Standardise description -->
+                  <circle cx="100" cy="315" r="18" fill="#c9933a"/>
+                  <text x="100" y="322" text-anchor="middle" fill="#1c1917" font-family="Inter, sans-serif" font-size="13" font-weight="700">5</text>
+                  <text x="135" y="312" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600">Standardise your business description</text>
+                  <text x="135" y="330" fill="rgba(255,255,255,0.65)" font-family="Inter, sans-serif" font-size="12">Same wording on website, GBP, LinkedIn, directories</text>
+
+                  <!-- Item 6: FAQ sections -->
+                  <circle cx="100" cy="360" r="18" fill="#c9933a"/>
+                  <text x="100" y="367" text-anchor="middle" fill="#1c1917" font-family="Inter, sans-serif" font-size="13" font-weight="700">6</text>
+                  <text x="135" y="357" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600">Add FAQ sections everywhere</text>
+                  <text x="135" y="375" fill="rgba(255,255,255,0.65)" font-family="Inter, sans-serif" font-size="12">Pre-packaged answers for AI to cite directly</text>
+
+                  <!-- Item 7: Internal links -->
+                  <circle cx="100" cy="405" r="18" fill="#c9933a"/>
+                  <text x="100" y="412" text-anchor="middle" fill="#1c1917" font-family="Inter, sans-serif" font-size="13" font-weight="700">7</text>
+                  <text x="135" y="402" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600">Optimise entity-rich internal links</text>
+                  <text x="135" y="420" fill="rgba(255,255,255,0.65)" font-family="Inter, sans-serif" font-size="12">Service plus location anchor text patterns</text>
+
+                  <!-- Item 8: Industry citations -->
+                  <circle cx="100" cy="450" r="18" fill="#c9933a"/>
+                  <text x="100" y="457" text-anchor="middle" fill="#1c1917" font-family="Inter, sans-serif" font-size="13" font-weight="700">8</text>
+                  <text x="135" y="447" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600">Build industry directory citations</text>
+                  <text x="135" y="465" fill="rgba(255,255,255,0.65)" font-family="Inter, sans-serif" font-size="12">Trade-specific platforms outweigh generic ones</text>
+
+                  <!-- Item 9: Monitor -->
+                  <circle cx="100" cy="495" r="18" fill="#c9933a"/>
+                  <text x="100" y="502" text-anchor="middle" fill="#1c1917" font-family="Inter, sans-serif" font-size="13" font-weight="700">9</text>
+                  <text x="135" y="492" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600">Monitor brand mentions in AI tools</text>
+                  <text x="135" y="510" fill="rgba(255,255,255,0.65)" font-family="Inter, sans-serif" font-size="12">Monthly checks across ChatGPT, Perplexity, Gemini</text>
+
+                  <!-- Item 10: Track -->
+                  <circle cx="100" cy="540" r="18" fill="#c9933a"/>
+                  <text x="100" y="547" text-anchor="middle" fill="#1c1917" font-family="Inter, sans-serif" font-size="13" font-weight="700">10</text>
+                  <text x="135" y="537" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600">Track AI-driven referrals</text>
+                  <text x="135" y="555" fill="rgba(255,255,255,0.65)" font-family="Inter, sans-serif" font-size="12">Set up GA4 to capture Perplexity and ChatGPT traffic</text>
+                </svg>
+                <figcaption id="geo-checklist-caption" class="post-svg-caption">The 10-point GEO checklist visualised in flow order</figcaption>
+              </figure>
 
               <h2 id="geo-vs-aeo-vs-seo">GEO vs AEO vs SEO: which one do you need</h2>
 

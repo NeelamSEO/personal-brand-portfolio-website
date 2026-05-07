@@ -4232,6 +4232,24 @@ body.cookie-consent-open {
 .related-card p { font-size: 13px; color: var(--muted); line-height: 1.6; margin: 0; }
 .post-cta-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
 
+.post-svg-figure {
+  margin: 36px 0;
+  width: 100%;
+}
+.post-svg-diagram {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+.post-svg-caption {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+  font-style: italic;
+}
+
 @media (max-width: 960px) {
   .post-layout { grid-template-columns: 1fr; }
   .post-toc { display: none; }
