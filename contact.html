@@ -25,36 +25,39 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Person",
-        "@id": "https://neelamseoconsulting.com/#person",
-        "name": "Neelam Shahzadi",
-        "jobTitle": "AI Local SEO, GEO, and AEO Specialist",
-        "url": "https://neelamseoconsulting.com",
+    "@type": "ContactPage",
+    "name": "Contact Neelam Shahzadi | Request an SEO Audit or Book a Call",
+    "url": "https://neelamseoconsulting.com/contact.html",
+    "description": "Request a free SEO Growth Audit, book an SEO call, or email Neelam directly. Serving service-based businesses in the UK, US, and Canada.",
+    "isPartOf": { "@id": "https://neelamseoconsulting.com" },
+    "mainEntity": {
+      "@id": "https://neelamseoconsulting.com/#person",
+      "contactPoint": {
+        "@type": "ContactPoint",
         "email": "hello@neelamseoconsulting.com",
-        "knowsAbout": ["Local SEO", "GEO", "AEO", "Google Business Profile SEO", "Technical SEO", "Content Strategy"]
+        "contactType": "Customer Service",
+        "areaServed": ["GB", "US", "CA"],
+        "availableLanguage": "English"
+      }
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://neelamseoconsulting.com/"
       },
       {
-        "@type": "ProfessionalService",
-        "@id": "https://neelamseoconsulting.com/#business",
-        "name": "Neelam Shahzadi — AI Local SEO, GEO and AEO Specialist",
-        "url": "https://neelamseoconsulting.com",
-        "email": "hello@neelamseoconsulting.com",
-        "founder": { "@id": "https://neelamseoconsulting.com/#person" },
-        "areaServed": ["United Kingdom", "United States", "Canada"],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "SEO Services",
-          "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Local SEO" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Google Business Profile SEO" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "GEO — Generative Engine Optimization" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AEO — Answer Engine Optimization" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Technical SEO Audit" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Content Strategy" } }
-          ]
-        }
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Contact",
+        "item": "https://neelamseoconsulting.com/contact.html"
       }
     ]
   }
