@@ -996,6 +996,13 @@ h3 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; line-height: 1.2
   color: var(--gold);
   font-size: 0.8rem;
 }
+/* Homepage latest blog section */
+.home-blog-section { padding: 64px 0; }
+.home-blog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 32px; }
+@media (max-width: 700px) { .home-blog-grid { grid-template-columns: 1fr; } }
+
+.newsletter-form { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 4px; }
+.newsletter-email-input { flex: 1 1 260px; max-width: 340px; margin-bottom: 0; }
 .newsletter-cta { background: var(--white); border: 1px solid var(--border); border-radius: 26px; padding: 44px; margin-top: 48px; text-align: center; }
 .newsletter-cta h2 { font-size: clamp(24px, 3vw, 38px); margin-bottom: 14px; }
 .newsletter-cta p { color: var(--muted); max-width: 520px; margin: 0 auto 28px; font-size: 16px; }
@@ -1113,6 +1120,9 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 
 /* Microcopy + markets */
 .footer-microcopy { font-size: 11.5px; color: rgba(255,255,255,0.72); line-height: 1.65; margin-top: 14px; }
+.footer-location { font-size: 11px; color: rgba(255,255,255,0.5); line-height: 1.5; margin-top: 8px; }
+.footer-calendly-link { font-size: 13px; font-weight: 600; color: var(--gold-light); }
+.footer-calendly-link:hover { color: var(--white); }
 .footer-meta-item { font-size: 13px; color: rgba(255,255,255,0.78); display: flex; flex-direction: column; gap: 2px; }
 .footer-meta-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,0.65); }
 
@@ -1148,6 +1158,7 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 .svc-hero { background: none; }
 .svc-hero::before { display: none; }
 .svc-hero .container { position: relative; z-index: 2; }
+.svc-hero-actions { margin-top: 0; }
 
 /* Animated gradient bg */
 /* Oversized real element so transform movement never shows edges — compositor-safe */
@@ -1791,6 +1802,11 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 .form-submit-wrap .btn { align-self: flex-start; }
 .form-direct-note { font-size: 13px; color: var(--muted); }
 .form-direct-note a { color: var(--gold); }
+.form-privacy-note { font-size: 12px; color: var(--muted); margin: 12px 0 4px; }
+.about-location-note { font-size: 15px; color: var(--muted); font-style: italic; margin-bottom: 28px; }
+.pf-architecture-note { font-size: 14px; color: rgba(255,255,255,0.65); margin-top: 12px; }
+.pf-architecture-note a { color: var(--gold-light); }
+.rs-aggregate-caption { font-size: 13px; color: var(--muted); text-align: center; margin-top: 20px; }
 .botcheck { display: none; }
 .card-btn-top { margin-top: 16px; }
 .cs-card .service-includes { margin-bottom: 18px; }
@@ -3829,6 +3845,7 @@ img { height: auto; max-width: 100%; }
   gap: 48px;
   align-items: center;
   max-width: 900px;
+  margin: 0 auto;
 }
 
 .svc-final-cta-text .label {
