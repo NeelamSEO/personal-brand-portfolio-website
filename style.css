@@ -13,7 +13,26 @@ html { scroll-behavior: smooth; }
   --muted: #57514c;
   --text: #2a2520;
   --card-bg: #ffffff;
+  --text-on-dark: #f0e4cf;
+  --text-on-muted-dark: #c9b89c;
+  --text-on-light: #2a2520;
 }
+
+/* Skip navigation — hidden until keyboard focused */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 9999;
+  padding: 12px 20px;
+  background: var(--dark);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+}
+.skip-link:focus { top: 0; }
 
 /* Breadcrumb navigation */
 .breadcrumb-nav {
@@ -4140,7 +4159,8 @@ body.cookie-consent-open {
 .post-article .post-toc h2 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 14px; }
 .post-layout { display: grid; grid-template-columns: 1fr 260px; gap: 56px; align-items: start; }
 .post-content { min-width: 0; }
-.post-hero-image { width: 100%; height: auto; border-radius: 16px; display: block; margin-bottom: 36px; object-fit: cover; }
+.post-hero-image { width: 100%; height: auto; border-radius: 0; display: block; margin: 0 0 2.5rem; object-fit: cover; }
+.post-hero-banner { width: 100%; line-height: 0; background: var(--dark); }
 .post-inline-image { width: 100%; height: auto; border-radius: 12px; display: block; margin: 32px 0; }
 
 .post-header { margin-bottom: 32px; }
@@ -4212,11 +4232,47 @@ body.cookie-consent-open {
 .post-author-info a { font-size: 13px; font-weight: 700; color: var(--gold); text-decoration: none; }
 .post-author-info a:hover { color: var(--dark); }
 
-.post-cta-box { background: var(--dark); border-radius: 28px; padding: 48px; margin: 48px 0; }
+.post-cta-box { background: var(--dark); border-radius: 28px; padding: 48px; margin: 48px 0; text-align: center; }
 .post-cta-box .label { color: var(--gold-light); }
-.post-cta-box h2 { color: var(--white); margin: 10px 0 16px; font-size: clamp(20px, 3vw, 28px); }
-.post-cta-box p { color: rgba(255,255,255,0.78); font-size: 16px; line-height: 1.7; margin-bottom: 28px; }
-.post-cta-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.post-cta-box h2::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+  margin: 0 auto 16px;
+}
+.post-cta-box h2 { color: #fdfaf5; margin: 0 0 16px; font-size: clamp(22px, 3.5vw, 34px); font-weight: 700; }
+.post-cta-box p { color: var(--text-on-dark); font-size: 16px; line-height: 1.6; margin: 0 auto 28px; max-width: 60ch; }
+.post-cta-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+/* Pillar post: CTA is inside .post-article so the typography overhaul rules
+   (.post-article h2 color:var(--dark), .post-article p color:var(--text))
+   win at equal specificity. These (0,2,1) selectors beat (0,1,1). */
+.post-article .post-cta-box h2 { color: #fdfaf5; border-top: none; padding-top: 0; margin-top: 0; letter-spacing: normal; }
+.post-article .post-cta-box p { color: var(--text-on-dark); font-size: 16px; line-height: 1.6; }
+
+/* Blog cards inside .post-article — reset typography overhaul styles
+   to prevent inflated font-size and border-top on card headings. */
+.post-article .blog-card h2 {
+  font-size: 17px;
+  line-height: 1.35;
+  color: var(--dark);
+  margin: 0 0 10px;
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+.post-article .blog-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+.post-related-single { max-width: 380px; }
 
 .post-related { margin-top: 48px; }
 .post-related h2 { font-size: clamp(20px, 3vw, 26px); margin-bottom: 24px; }
@@ -4302,7 +4358,7 @@ body.cookie-consent-open {
   letter-spacing: -0.02em;
   margin-bottom: 24px;
   font-weight: 800;
-  color: var(--white);
+  color: var(--dark);
 }
 
 /* H2 - section headings */
@@ -4436,6 +4492,23 @@ body.cookie-consent-open {
   margin-top: 16px;
   font-size: 13px;
   color: rgba(255,255,255,0.6);
+  font-style: italic;
+}
+
+/* Override .post-article p (0,1,1) which beats .stat-callout-label (0,1,0).
+   Two-class selectors (0,2,0) restore legibility on the dark callout background. */
+.stat-callout .stat-callout-label {
+  color: var(--text-on-dark);
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 520px;
+  margin: 0 auto;
+}
+.stat-callout .stat-callout-source {
+  color: var(--text-on-muted-dark);
+  display: block;
+  margin-top: 14px;
+  font-size: 13px;
   font-style: italic;
 }
 
