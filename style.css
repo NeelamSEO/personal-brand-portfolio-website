@@ -4263,3 +4263,320 @@ body.cookie-consent-open {
   .post-table { font-size: 12px; }
   .post-table th, .post-table td { padding: 10px 12px; }
 }
+
+/* === BLOG POST TYPOGRAPHY OVERHAUL === */
+
+/* Article container width */
+.post-article .post-content,
+.post-article main > * {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-article .post-svg-figure,
+.post-article .post-table,
+.post-article table {
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Body text */
+.post-article p,
+.post-article li {
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.post-article p:last-child {
+  margin-bottom: 0;
+}
+
+/* H1 */
+.post-article h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  font-weight: 800;
+  color: var(--white);
+}
+
+/* H2 - section headings */
+.post-article h2,
+.post-article section h2 {
+  font-size: clamp(28px, 3.5vw, 38px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-top: 64px;
+  margin-bottom: 24px;
+  font-weight: 700;
+  color: var(--dark);
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+/* First H2 in article should not have top border (visual rest after hero) */
+.post-article > section:first-of-type > h2,
+.post-article section:first-child h2 {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* H3 */
+.post-article h3 {
+  font-size: clamp(22px, 2.5vw, 26px);
+  line-height: 1.3;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+/* H4 (rare but possible) */
+.post-article h4 {
+  font-size: 19px;
+  font-weight: 700;
+  margin-top: 28px;
+  margin-bottom: 12px;
+  color: var(--dark);
+}
+
+/* Lists */
+.post-article ul,
+.post-article ol {
+  margin: 24px 0 32px;
+  padding-left: 28px;
+}
+
+.post-article ul li,
+.post-article ol li {
+  margin-bottom: 14px;
+  padding-left: 8px;
+}
+
+.post-article ol li::marker {
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.post-article ul li::marker {
+  color: var(--gold);
+}
+
+/* Strong / bold inline */
+.post-article p strong,
+.post-article li strong {
+  font-weight: 700;
+  color: var(--dark);
+}
+
+/* Inline links */
+.post-article p a,
+.post-article li a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.post-article p a:hover,
+.post-article li a:hover {
+  color: var(--gold-light);
+}
+
+/* === STAT CALLOUT === */
+.stat-callout {
+  background: linear-gradient(135deg, var(--dark) 0%, #27241d 100%);
+  border-radius: 16px;
+  padding: 32px 36px;
+  margin: 36px auto;
+  max-width: 760px;
+  text-align: center;
+  position: relative;
+}
+
+.stat-callout::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 0 0 4px 4px;
+}
+
+.stat-callout-number {
+  font-size: clamp(48px, 7vw, 72px);
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.stat-callout-label {
+  font-size: 16px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.5;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.stat-callout-source {
+  display: block;
+  margin-top: 16px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  font-style: italic;
+}
+
+/* === PULL QUOTE === */
+.post-pull-quote {
+  margin: 48px auto;
+  max-width: 720px;
+  padding: 32px 40px;
+  border-left: 4px solid var(--gold);
+  background: var(--cream);
+  border-radius: 0 12px 12px 0;
+}
+
+.post-pull-quote p {
+  font-size: 22px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 0;
+  font-style: italic;
+}
+
+/* === KEY INSIGHT BOX === */
+.key-insight {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 12px 12px 0;
+  padding: 24px 28px;
+  margin: 32px auto;
+  max-width: 760px;
+}
+
+.key-insight h4 {
+  margin: 0 0 12px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.key-insight p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--dark);
+}
+
+/* === TABLE STYLING REFINED === */
+.post-article .post-table,
+.post-article table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 36px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  font-size: 15px;
+}
+
+.post-article table thead {
+  background: var(--dark);
+}
+
+.post-article table thead th {
+  color: var(--cream);
+  font-weight: 700;
+  padding: 16px 20px;
+  text-align: left;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.post-article table tbody td {
+  padding: 16px 20px;
+  border-top: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.post-article table tbody tr:nth-child(even) {
+  background: var(--cream);
+}
+
+.post-article table tbody tr td:first-child {
+  font-weight: 700;
+  color: var(--dark);
+}
+
+/* === TLDR REFINEMENT === */
+.tldr-box {
+  margin: 40px auto;
+  max-width: 760px;
+  padding: 28px 32px;
+  background: var(--cream);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 12px 12px 0;
+}
+
+.tldr-heading {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+
+.tldr-box p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--dark);
+}
+
+/* === MOBILE RESPONSIVE === */
+@media (max-width: 768px) {
+  .post-article p,
+  .post-article li {
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .post-article h2,
+  .post-article section h2 {
+    margin-top: 48px;
+    padding-top: 24px;
+  }
+
+  .stat-callout {
+    padding: 24px 20px;
+  }
+
+  .post-pull-quote {
+    padding: 24px 24px;
+  }
+
+  .key-insight {
+    padding: 20px 24px;
+  }
+}
