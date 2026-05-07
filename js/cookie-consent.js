@@ -1,70 +1,61 @@
 (function () {
   'use strict';
 
-  var STORAGE_KEY = 'cookieConsent';
-  var banner = document.getElementById('cookie-banner');
+  var CONSENT_KEY = 'cookieConsent';
+  var banner     = document.getElementById('cookie-consent');
+  var acceptBtn  = document.getElementById('cookie-accept');
+  var declineBtn = document.getElementById('cookie-decline');
 
-  // ─── GA4 loader ───────────────────────────────────────────────────────────
-  // Fires only when the visitor has accepted cookies.
-  // TODO Neelam: replace G-XXXXXXXXXX with your real GA4 measurement ID
-  // once you set up Google Analytics, then uncomment the lines below.
-  function loadGA4() {
-    // var script = document.createElement('script');
-    // script.async = true;
-    // script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
-    // document.head.appendChild(script);
-    //
-    // window.dataLayer = window.dataLayer || [];
-    // function gtag() { dataLayer.push(arguments); }
-    // gtag('js', new Date());
-    // gtag('config', 'G-XXXXXXXXXX');
+  if (!banner) { return; }
+
+  function show() {
+    banner.removeAttribute('hidden');
+    void banner.offsetWidth; // force reflow so CSS transition fires
+    banner.classList.add('is-visible');
+    document.body.classList.add('cookie-consent-open');
   }
 
-  // ─── Helpers ──────────────────────────────────────────────────────────────
-  function hideBanner() {
-    if (banner) {
-      banner.setAttribute('aria-hidden', 'true');
-      banner.style.display = 'none';
-    }
+  function hide() {
+    banner.classList.remove('is-visible');
+    document.body.classList.remove('cookie-consent-open');
+    setTimeout(function () {
+      banner.setAttribute('hidden', '');
+    }, 320);
   }
 
   function saveConsent(value) {
-    try {
-      localStorage.setItem(STORAGE_KEY, value);
-    } catch (e) {}
-    hideBanner();
-    if (value === 'accepted') {
-      loadGA4();
-    }
+    try { localStorage.setItem(CONSENT_KEY, value); } catch (e) {}
+    hide();
   }
 
-  // ─── Check existing consent ───────────────────────────────────────────────
+  // Check for an existing choice
   var existing;
-  try {
-    existing = localStorage.getItem(STORAGE_KEY);
-  } catch (e) {}
+  try { existing = localStorage.getItem(CONSENT_KEY); } catch (e) {}
 
   if (existing) {
-    hideBanner();
-    if (existing === 'accepted') {
-      loadGA4();
-    }
-    return;
+    return; // choice already recorded — banner stays hidden
   }
 
-  // ─── No prior consent — show banner and wire buttons ──────────────────────
-  if (!banner) { return; }
+  // No prior consent — show the banner
+  show();
 
-  banner.style.display = 'flex';
-  banner.removeAttribute('aria-hidden');
+  acceptBtn.addEventListener('click', function () { saveConsent('accepted'); });
+  declineBtn.addEventListener('click', function () { saveConsent('declined'); });
 
-  var acceptBtn = document.getElementById('cookie-accept');
-  var declineBtn = document.getElementById('cookie-decline');
-
-  if (acceptBtn) {
-    acceptBtn.addEventListener('click', function () { saveConsent('accepted'); });
-  }
-  if (declineBtn) {
-    declineBtn.addEventListener('click', function () { saveConsent('declined'); });
-  }
 }());
+
+// ─────────────────────────────────────────────────────────────────────────────
+// TODO Neelam: replace G-XXXXXXXXXX with your real GA4 Measurement ID once
+// you create the GA4 property at analytics.google.com.
+// Once filled in, uncomment the block below.
+//
+// if (localStorage.getItem("cookieConsent") === "accepted") {
+//   var s = document.createElement("script");
+//   s.async = true;
+//   s.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX";
+//   document.head.appendChild(s);
+//   window.dataLayer = window.dataLayer || [];
+//   function gtag(){ dataLayer.push(arguments); }
+//   gtag("js", new Date());
+//   gtag("config", "G-XXXXXXXXXX");
+// }
