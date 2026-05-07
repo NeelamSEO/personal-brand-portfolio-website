@@ -2188,7 +2188,7 @@ textarea.form-input { resize: vertical; min-height: 130px; }
 }
 .ps-step-cta .ps-label { color: var(--gold-light); }
 .ps-desc {
-  font-size: 11px; color: rgba(255,255,255,.35); font-weight: 500;
+  font-size: 11px; color: rgba(255,255,255,0.78); font-weight: 500;
   line-height: 1.5; max-width: 140px;
 }
 
