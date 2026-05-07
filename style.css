@@ -4085,6 +4085,11 @@ body.cookie-consent-open {
 }
 
 /* ── BLOG POST ARTICLE ── */
+.eyebrow { display: inline-block; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: var(--gold); margin-bottom: 14px; }
+.post-article { max-width: 820px; margin: 0 auto; padding-bottom: 56px; }
+.tldr-heading { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: var(--gold); margin: 0 0 10px; }
+.post-article .post-toc { position: static; margin: 0 0 40px; }
+.post-article .post-toc h2 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 14px; }
 .post-layout { display: grid; grid-template-columns: 1fr 260px; gap: 56px; align-items: start; }
 .post-content { min-width: 0; }
 .post-hero-image { width: 100%; height: auto; border-radius: 16px; display: block; margin-bottom: 36px; }
