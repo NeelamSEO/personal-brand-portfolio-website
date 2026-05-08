@@ -135,10 +135,9 @@
 
   } // end initCosmetics
 
-  if ('requestIdleCallback' in window) {
-    requestIdleCallback(initCosmetics, { timeout: 2000 });
-  } else {
-    setTimeout(initCosmetics, 200);
-  }
+  document.addEventListener('mousemove', function init() {
+    document.removeEventListener('mousemove', init);
+    initCosmetics();
+  }, { once: true });
 
 }());
