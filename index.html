@@ -37,7 +37,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 <link rel="canonical" href="https://neelamseoconsulting.com/" />
-  <link rel="preload" as="image" href="/neelam-profile.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="/neelam-profile.webp" type="image/webp" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" media="print" onload="this.media='all'">
@@ -284,7 +284,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="profile-wrap">
           <div class="profile-card">
-            <img src="neelam-profile.jpg" alt="Neelam Shahzadi, AI Local SEO, GEO, and AEO Specialist" class="hero-profile-img" width="1448" height="1448" fetchpriority="high">
+            <picture>
+              <source type="image/webp" srcset="/neelam-profile.webp">
+              <img src="neelam-profile.jpg" alt="Neelam Shahzadi, AI Local SEO, GEO, and AEO Specialist" class="hero-profile-img" width="600" height="600" fetchpriority="high">
+            </picture>
             <p class="profile-card-name">Neelam Shahzadi</p>
             <p class="profile-card-role">AI Local SEO, GEO &amp; AEO Specialist</p>
           </div>
