@@ -39,7 +39,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="canonical" href="https://neelamseoconsulting.com/contact" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.min.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -175,7 +175,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- CONTACT INFO -->
         <div>
           <div class="contact-info-card">
-            <img src="neelam-profile.jpg" alt="Neelam Shahzadi, AI Local SEO, GEO, and AEO Specialist" class="profile-img" />
+            <picture>
+              <source type="image/webp" srcset="/neelam-profile.webp">
+              <img src="neelam-profile.jpg" alt="Neelam Shahzadi, AI Local SEO, GEO, and AEO Specialist" class="profile-img" width="600" height="600" loading="lazy" />
+            </picture>
             <h3>Work directly with Neelam on your SEO growth strategy.</h3>
             <p class="contact-card-sub">No account managers. No hand-offs. You work directly with me from audit to implementation.</p>
 
@@ -322,8 +325,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </footer>
 
-<script src="micro.js"></script>
-<script src="viz.js"></script>
+<script src="micro.js" defer></script>
+<script src="viz.js" defer></script>
 
   <div id="cookie-consent" class="cookie-consent" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
     <p class="cookie-consent-text">
