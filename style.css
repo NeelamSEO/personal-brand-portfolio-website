@@ -4668,3 +4668,47 @@ body.cookie-consent-open {
     padding: 20px 24px;
   }
 }
+
+
+/* ── BRAND LOGO IMAGES (Phase 3: SVG logo + mark) ── */
+.logo-svg { height: 46px; width: auto; display: block; }
+.footer-mark { width: 40px; height: 40px; display: block; flex-shrink: 0; }
+@media (max-width: 640px) { .logo-svg { height: 40px; } }
+
+
+/* ── Phase 5: mobile responsiveness hardening ── */
+img { max-width: 100%; height: auto; }
+.nav-toggle { min-width: 48px; min-height: 48px; }
+@media (max-width: 768px) {
+  .btn, .btn-sm, .btn-lg,
+  .svc-tab, .svc-faq-q, .svc-nav-btn { min-height: 48px; }
+  .footer-social-icon { min-width: 48px; min-height: 48px; }
+  .post-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+
+/* ── Phase 5: journey-step overflow fix ── */
+.journey-step { min-width: 0; }
+.journey-step > * { min-width: 0; }
+@media (max-width: 860px) {
+  .journey-step p, .journey-step h3 { overflow-wrap: anywhere; }
+}
+
+/* ── Phase 5: mobile nav — fade hide (no horizontal overflow, keeps sticky elsewhere) ── */
+@media (max-width: 640px) {
+  .main-nav {
+    transform: none !important;
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transition: opacity .25s ease, visibility .25s ease !important;
+  }
+  .main-nav.nav-open {
+    opacity: 1 !important; visibility: visible !important;
+    pointer-events: auto !important; transform: none !important;
+  }
+  .main-nav a { min-height: 48px; }
+}
+
+/* ── Phase 5: blog post-layout — collapse grid on mobile (prevents min-content overflow) ── */
+@media (max-width: 768px) {
+  .post-layout { display: block; }
+  .container.post-article { min-width: 0; }
+}
